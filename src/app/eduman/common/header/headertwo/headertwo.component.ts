@@ -65,8 +65,6 @@ export class HeadertwoComponent implements OnInit {
     ngOnInit(): void {
         this._coreService.getIdentitas().subscribe((result) => {
             if (result.status) {
-                result.data.instansi = result.data.instansi.replace(" ", "<br>")
-
                 this.Identitas = result.data;
             }
         })

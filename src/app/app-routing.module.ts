@@ -40,11 +40,11 @@ import { StudentprofilemainComponent } from './eduman/student/studentprofilemain
 const routes: Routes = [
     { path: '', component: HometwomainComponent, pathMatch: 'full' },
     {
-        path: 'home',
+        path: 'home-1',
         component: HomeonemainComponent
     },
     {
-        path: 'home-2',
+        path: 'home',
         component: HometwomainComponent
     },
     {

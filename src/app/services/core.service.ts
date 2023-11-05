@@ -21,4 +21,10 @@ export class CoreService {
             headers: this.Header
         });
     }
+
+    getSlider(): Observable<any> {
+        return this._httpClient.get<any>(`${environment.endpoint}/slider`, {
+            headers: this.Header
+        });
+    }
 }

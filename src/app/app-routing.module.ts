@@ -37,149 +37,149 @@ import { ForgotpasswordmainComponent } from './eduman/forgotpassword/forgotpassw
 import { StudentprofilemainComponent } from './eduman/student/studentprofilemain/studentprofilemain.component';
 
 
-const routes: Routes = [ 
-  { path: '', component: HomeonemainComponent, pathMatch: 'full' },
-  {
-    path: 'home',
-    component: HomeonemainComponent
-  },
-  {
-    path: 'home-2',
-    component: HometwomainComponent
-  },
-  {
-    path: 'home-3',
-    component: HomethreemainComponent
-  },
-  {
-    path: 'course',
-    component: CourseonemainComponent
-  },
-  {
-    path: 'course-2',
-    component: CoursetwomainComponent
-  },
-  {
-    path: 'course-3',
-    component: CoursethreemainComponent
-  },
-  {
-    path: 'course-4',
-    component: CoursefourmainComponent
-  },
-  {
-    path: 'course-details',
-    component: CoursedetailsmainComponent
-  },
-  {
-    path: 'instructor',
-    component: InstructormainComponent
-  },
-  {
-    path: 'instructor-profile',
-    component: InstructorpromainComponent
-  },
-  {
-    path: 'student-profile',
-    component: StudentprofilemainComponent
-  },
-  {
-    path: 'become-instructor',
-    component: BecomeinstructormainComponent
-  },
-  {
-    path: 'shop',
-    component: ShopmainComponent
-  },
-  {
-    path: 'shop-details',
-    component: ShopdetailsmainComponent
-  },
-  {
-    path: 'wishlist',
-    component: WishlistmainComponent
-  },
-  {
-    path: 'cart',
-    component: CartmainComponent
-  },
-  {
-    path: 'checkout',
-    component: CheckoutmainComponent
-  },
-  {
-    path: 'event',
-    component: EventmainComponent
-  },
-  {
-    path: 'event-details',
-    component: EventdetailsmainComponent
-  },
-  {
-    path: 'blog',
-    component: BlogmainComponent
-  },
-  {
-    path: 'blog-details',
-    component: BlogdetailsmainComponent
-  },
-  {
-    path: 'zoom-class',
-    component: ZoomclassmainComponent
-  },
-  {
-    path: 'zoom-class-detalis',
-    component: ZoomclassdetailsmainComponent
-  },
-  {
-    path: 'webinar',
-    component: WebinarmainComponent
-  },
-  {
-    path: 'webinar-details',
-    component: WebinardetailsmainComponent
-  },
-  {
-    path: 'about',
-    component: AboutmainComponent
-  },
-  {
-    path: 'membership',
-    component: MembershipmainComponent
-  },
-  {
-    path: '404-page',
-    component: ErrorpageComponent
-  },
-  {
-    path: 'contact',
-    component: ContactmainComponent
-  },
-  {
-    path: 'faq',
-    component: FaqmainComponent
-  },
-  {
-    path: 'faq-details',
-    component: FaqdetailsmainComponent
-  },
-  {
-    path: 'signin',
-    component: SigninmainComponent
-  },
-  {
-    path: 'signup',
-    component: SignupmainComponent
-  },
-  {
-    path: 'forgot-password',
-    component: ForgotpasswordmainComponent
-  },
+const routes: Routes = [
+    { path: '', component: HometwomainComponent, pathMatch: 'full' },
+    {
+        path: 'home',
+        component: HomeonemainComponent
+    },
+    {
+        path: 'home-2',
+        component: HometwomainComponent
+    },
+    {
+        path: 'home-3',
+        component: HomethreemainComponent
+    },
+    {
+        path: 'course',
+        component: CourseonemainComponent
+    },
+    {
+        path: 'course-2',
+        component: CoursetwomainComponent
+    },
+    {
+        path: 'course-3',
+        component: CoursethreemainComponent
+    },
+    {
+        path: 'course-4',
+        component: CoursefourmainComponent
+    },
+    {
+        path: 'course-details',
+        component: CoursedetailsmainComponent
+    },
+    {
+        path: 'instructor',
+        component: InstructormainComponent
+    },
+    {
+        path: 'instructor-profile',
+        component: InstructorpromainComponent
+    },
+    {
+        path: 'student-profile',
+        component: StudentprofilemainComponent
+    },
+    {
+        path: 'become-instructor',
+        component: BecomeinstructormainComponent
+    },
+    {
+        path: 'shop',
+        component: ShopmainComponent
+    },
+    {
+        path: 'shop-details',
+        component: ShopdetailsmainComponent
+    },
+    {
+        path: 'wishlist',
+        component: WishlistmainComponent
+    },
+    {
+        path: 'cart',
+        component: CartmainComponent
+    },
+    {
+        path: 'checkout',
+        component: CheckoutmainComponent
+    },
+    {
+        path: 'event',
+        component: EventmainComponent
+    },
+    {
+        path: 'event-details',
+        component: EventdetailsmainComponent
+    },
+    {
+        path: 'blog',
+        component: BlogmainComponent
+    },
+    {
+        path: 'blog-details',
+        component: BlogdetailsmainComponent
+    },
+    {
+        path: 'zoom-class',
+        component: ZoomclassmainComponent
+    },
+    {
+        path: 'zoom-class-detalis',
+        component: ZoomclassdetailsmainComponent
+    },
+    {
+        path: 'webinar',
+        component: WebinarmainComponent
+    },
+    {
+        path: 'webinar-details',
+        component: WebinardetailsmainComponent
+    },
+    {
+        path: 'about',
+        component: AboutmainComponent
+    },
+    {
+        path: 'membership',
+        component: MembershipmainComponent
+    },
+    {
+        path: '404-page',
+        component: ErrorpageComponent
+    },
+    {
+        path: 'contact',
+        component: ContactmainComponent
+    },
+    {
+        path: 'faq',
+        component: FaqmainComponent
+    },
+    {
+        path: 'faq-details',
+        component: FaqdetailsmainComponent
+    },
+    {
+        path: 'signin',
+        component: SigninmainComponent
+    },
+    {
+        path: 'signup',
+        component: SignupmainComponent
+    },
+    {
+        path: 'forgot-password',
+        component: ForgotpasswordmainComponent
+    },
 ];
 
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

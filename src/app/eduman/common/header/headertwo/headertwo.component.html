@@ -94,13 +94,17 @@
         <div class="side-info-content">
             <div class="offset-widget offset-logo mb-40">
                 <div class="row align-items-center">
-                    <div class="col-9">
+                    <div class="col-9 d-flex gap-2 align-items-center">
                         <a [routerLink]="['/']">
-                            <img src="assets/img/logo/logo-black.png" alt="Logo">
+                            <img [src]="Identitas?.logo" alt="logo" style="height: 3rem">
                         </a>
+                        <span [innerHTML]="Identitas?.instansi" class="text-center lh-sm" style="font-size: 14px">
+                        </span>
                     </div>
-                    <div class="col-3 text-end"><button class="side-info-close" (click)="infoclick()"><i
-                                class="fal fa-times"></i></button>
+                    <div class="col-3 text-end">
+                        <button class="side-info-close" (click)="infoclick()">
+                            <i class="fal fa-times"></i>
+                        </button>
                     </div>
                 </div>
             </div>

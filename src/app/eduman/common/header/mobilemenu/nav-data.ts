@@ -174,3 +174,244 @@ export const navbarData: INavbarData[] = [
         ]
     }
 ];
+
+export const Menu: any[] = [
+    {
+        routeLink: '',
+        label: 'Tentang Kami',
+        items: [
+            {
+                label: 'Sambutan Rektor',
+                routeLink: '/course'
+            },
+            {
+                label: 'Visi & Misi',
+                routeLink: '/course'
+            },
+            {
+                label: 'Tugas & Fungsi',
+                routeLink: '/course'
+            },
+            {
+                label: 'Manajemen',
+                routeLink: '/course',
+                items: [
+                    {
+                        label: 'Majelis Wali Amanat',
+                        routeLink: '/course'
+                    },
+                    {
+                        label: 'Senat Akademik',
+                        routeLink: '/course'
+                    },
+                    {
+                        label: 'Dewan Guru Besar',
+                        routeLink: '/course'
+                    },
+                    {
+                        label: 'Pemimpin Universitas',
+                        routeLink: '/course'
+                    },
+                    {
+                        label: 'Struktur Organisasi',
+                        routeLink: '/course'
+                    },
+                ]
+            },
+            {
+                label: 'Sejarah',
+                routeLink: '/course'
+            },
+            {
+                label: 'Makna Lambang',
+                routeLink: '/course'
+            },
+            {
+                label: 'Panduan Identitas Visual',
+                routeLink: '/course'
+            },
+            {
+                label: 'Himne USI',
+                routeLink: '/course'
+            },
+            {
+                label: 'Peta Kampus',
+                routeLink: '/course'
+            },
+        ]
+    },
+    {
+        routeLink: '',
+        label: 'Berita',
+        items: [
+            {
+                label: 'Pendidikan',
+                routeLink: '/course'
+            },
+            {
+                label: 'Prestasi',
+                routeLink: '/course'
+            },
+            {
+                label: 'Penelitian & Inovasi',
+                routeLink: '/course'
+            },
+            {
+                label: 'Seputar Kampus',
+                routeLink: '/course'
+            },
+            {
+                label: 'Liputan',
+                routeLink: '/course'
+            },
+            {
+                label: 'Cek Fakta',
+                routeLink: '/course'
+            },
+        ]
+    },
+    {
+        routeLink: '',
+        label: 'Pendidikan',
+        items: [
+            {
+                label: 'Fakultas Keguruan & Ilmu Pendidikan',
+                routeLink: '/course'
+            },
+            {
+                label: 'Fakultas Ekonomi',
+                routeLink: '/course'
+            },
+            {
+                label: 'Fakultas Hukum',
+                routeLink: '/course'
+            },
+            {
+                label: 'Fakultas Pertanian',
+                routeLink: '/course'
+            },
+            {
+                label: 'Fakultas Teknik',
+                routeLink: '/course'
+            },
+        ]
+    },
+    {
+        routeLink: '',
+        label: 'Mahasiswa',
+        items: [
+            {
+                label: 'Kreativitas Mahasiswa',
+                routeLink: '/course'
+            },
+            {
+                label: 'Pengembangan Karakter',
+                routeLink: '/course'
+            },
+            {
+                label: 'Organisasi & Fasilitas',
+                routeLink: '/course'
+            },
+            {
+                label: 'Kesejahteraan Mahasiswa',
+                routeLink: '/course'
+            },
+            {
+                label: 'Beasiswa',
+                routeLink: '/course'
+            },
+        ]
+    },
+    {
+        routeLink: '',
+        label: 'Penelitian',
+        items: [
+            {
+                label: 'Publikasi',
+                routeLink: '/course'
+            },
+            {
+                label: 'Pengembangan Usaha',
+                routeLink: '/course'
+            },
+            {
+                label: 'Pusat Study',
+                routeLink: '/course'
+            },
+            {
+                label: 'Kepakaran Riset & Tema',
+                routeLink: '/course',
+                items: [
+                    {
+                        label: 'Kepakaran Berdasar Riset',
+                        routeLink: '/course',
+                    },
+                    {
+                        label: 'Proyek Riset',
+                        routeLink: '/course',
+                    }
+                ]
+            },
+        ]
+    },
+    {
+        routeLink: '',
+        label: 'Pengabdian',
+        items: [
+            {
+                label: 'KKN PPM',
+                routeLink: '/course'
+            },
+            {
+                label: 'Program Desa Binaan',
+                routeLink: '/course'
+            },
+            {
+                label: 'Teknologi Tepat Guna',
+                routeLink: '/course'
+            },
+            {
+                label: 'Pendidikan untuk Pembangunan Berkelanjutan',
+                routeLink: '/course',
+            },
+            {
+                label: 'Disaster Respon Unit',
+                routeLink: '/course',
+            },
+            {
+                label: 'Pendamping UMKM',
+                routeLink: '/course',
+            },
+            {
+                label: 'RCE Summer Course',
+                routeLink: '/course',
+            },
+        ]
+    },
+    {
+        routeLink: '',
+        label: 'Pendaftaran',
+        items: [
+            {
+                label: 'Sarjana',
+                routeLink: '/course'
+            },
+            {
+                label: 'Sarjana Terapan',
+                routeLink: '/course'
+            },
+            {
+                label: 'Pasca Sarjana',
+                routeLink: '/course'
+            },
+            {
+                label: 'Profesi',
+                routeLink: '/course',
+            },
+            {
+                label: 'Program Internasional',
+                routeLink: '/course',
+            },
+        ]
+    },
+]

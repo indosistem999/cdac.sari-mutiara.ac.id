@@ -3,57 +3,45 @@ $white: #ffffff;
 $black: #000;
 
 // Grey Colors ---------------
-$theme-color-2:#FFB013;
+$theme-color-2: #ffb013;
 
 // Grey-2Colors ---------------
-$theme-color-2-2:#A2A2A2;
-
+$theme-color-2-2: #a2a2a2;
 
 // Footer Colors ---------------
 $footer-bg: #000;
 
-
-
-// basic color
-$theme-color: #2467EC;
-
-
+$biru: #003971;
 
 // basic color
-$theme-bg: #F6F8FB;
+$theme-color: #2467ec;
 
-
+// basic color
+$theme-bg: #f6f8fb;
 
 // Text Colors ---------------
 $body-text: #575757;
 
-
-
 // Border Colors ---------------
-$border:#edeef2;
+$border: #edeef2;
 
 // Heading Colors ---------------
 $heading-color: #141517;
 
-
 // section-bg Colors ---------------
-$section-bg: #F6F8FB;
-
-
+$section-bg: #f6f8fb;
 
 // Font Family
-$nunito: 'Nunito Sans', sans-serif;
-$raleway: 'Raleway', sans-serif;
+$nunito: "Nunito Sans", sans-serif;
+$raleway: "Raleway", sans-serif;
 $fontawesome: "Font Awesome 5 Pro";
 
-
-
-//backgroud 
-@mixin background($position: center,$size: cover,$repeat: no-repeat) {
+//backgroud
+@mixin background($position: center, $size: cover, $repeat: no-repeat) {
   background: {
-      position: $position;
-      repeat: $repeat;
-      size: $size;
+    position: $position;
+    repeat: $repeat;
+    size: $size;
   }
 }
 
@@ -76,159 +64,155 @@ $fontawesome: "Font Awesome 5 Pro";
 
 //border
 @mixin border-radius($man) {
--webkit-border-radius: $man;
--moz-border-radius: $man;
-border-radius: $man;
+  -webkit-border-radius: $man;
+  -moz-border-radius: $man;
+  border-radius: $man;
 }
 
 // sentence case
 @mixin sentence-case() {
   text-transform: lowercase;
   &:first-letter {
-      text-transform: uppercase;
+    text-transform: uppercase;
   }
 }
 
 // Flexbox display
 @mixin flexbox() {
-display: -webkit-box;
-display: -moz-box;
-display: -ms-flexbox;
-display: -webkit-flex;
-display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
 }
 
 // Box shadows
 @mixin box-shadow($shadow) {
--webkit-box-shadow: $shadow;
-  -moz-box-shadow: $shadow;       
-      box-shadow: $shadow;
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
 }
 
 //before-left-top
 @mixin before-left-top($width, $height, $background, $left, $top) {
   position: relative;
-  &::before{
-      position: absolute;
-      content: '';
-      width: $width;
-      height: $height;
-      background: $background;
-      left: $left;
-      top: $top;
-  }	
+  &::before {
+    position: absolute;
+    content: "";
+    width: $width;
+    height: $height;
+    background: $background;
+    left: $left;
+    top: $top;
+  }
 }
 
 //before-left-bottom
 @mixin before-left-bottom($width, $height, $background, $left, $bottom) {
   position: relative;
-  &::before{
-      position: absolute;
-      content: '';
-      width: $width;
-      height: $height;
-      background: $background;
-      left: $left;
-      bottom: $bottom;
-  }	
+  &::before {
+    position: absolute;
+    content: "";
+    width: $width;
+    height: $height;
+    background: $background;
+    left: $left;
+    bottom: $bottom;
+  }
 }
 
 //before-right-top
 @mixin before-right-bottom($width, $height, $background, $right, $bottom) {
   position: relative;
-  &::before{
-      position: absolute;
-      content: '';
-      width: $width;
-      height: $height;
-      background: $background;
-      right: $right;
-      bottom: $bottom;
-  }	
+  &::before {
+    position: absolute;
+    content: "";
+    width: $width;
+    height: $height;
+    background: $background;
+    right: $right;
+    bottom: $bottom;
+  }
 }
 
 //before-right-bottom
 @mixin before-right-top($width, $height, $background, $right, $top) {
   position: relative;
-  &::before{
-      position: absolute;
-      content: '';
-      width: $width;
-      height: $height;
-      background: $background;
-      right: $right;
-      top: $top;
-  }	
+  &::before {
+    position: absolute;
+    content: "";
+    width: $width;
+    height: $height;
+    background: $background;
+    right: $right;
+    top: $top;
+  }
 }
 
 //after-left-top
 @mixin after-left-top($width, $height, $background, $left, $top) {
   position: relative;
-  &::after{
-      position: absolute;
-      content: '';
-      width: $width;
-      height: $height;
-      background: $background;
-      left: $left;
-      top: $top;
-  }	
+  &::after {
+    position: absolute;
+    content: "";
+    width: $width;
+    height: $height;
+    background: $background;
+    left: $left;
+    top: $top;
+  }
 }
 
 //after-left-bottom
 @mixin after-left-bottom($width, $height, $background, $left, $bottom) {
   position: relative;
-  &::after{
-      position: absolute;
-      content: '';
-      width: $width;
-      height: $height;
-      background: $background;
-      left: $left;
-      bottom: $bottom;
-  }	
+  &::after {
+    position: absolute;
+    content: "";
+    width: $width;
+    height: $height;
+    background: $background;
+    left: $left;
+    bottom: $bottom;
+  }
 }
 
 //after-right-top
 @mixin after-right-bottom($width, $height, $background, $right, $bottom) {
   position: relative;
-  &::after{
-      position: absolute;
-      content: '';
-      width: $width;
-      height: $height;
-      background: $background;
-      right: $right;
-      bottom: $bottom;
-  }	
+  &::after {
+    position: absolute;
+    content: "";
+    width: $width;
+    height: $height;
+    background: $background;
+    right: $right;
+    bottom: $bottom;
+  }
 }
 
 //after-right-bottom
 @mixin after-right-top($width, $height, $background, $right, $top) {
   position: relative;
-  &::after{
-      position: absolute;
-      content: '';
-      width: $width;
-      height: $height;
-      background: $background;
-      right: $right;
-      top: $top;
-  }	
+  &::after {
+    position: absolute;
+    content: "";
+    width: $width;
+    height: $height;
+    background: $background;
+    right: $right;
+    top: $top;
+  }
 }
 
-
-
 //break points
-$xxxl: 'only screen and (min-width: 1600px) and (max-width: 1800px)';
-$xxl: 'only screen and (min-width: 1400px) and (max-width: 1599px)';
-$xl: 'only screen and (min-width: 1200px) and (max-width: 1399px)';
-$lg : 'only screen and (min-width: 992px) and (max-width: 1199px)';
-$md:'only screen and (min-width: 768px) and (max-width: 991px)';
-$sm: 'only screen and (min-width: 576px) and (max-width: 767px)';
-$xs:'(max-width: 575px)';
-
-
+$xxxl: "only screen and (min-width: 1600px) and (max-width: 1800px)";
+$xxl: "only screen and (min-width: 1400px) and (max-width: 1599px)";
+$xl: "only screen and (min-width: 1200px) and (max-width: 1399px)";
+$lg: "only screen and (min-width: 992px) and (max-width: 1199px)";
+$md: "only screen and (min-width: 768px) and (max-width: 991px)";
+$sm: "only screen and (min-width: 576px) and (max-width: 767px)";
+$xs: "(max-width: 575px)";
 
 //spacing
 
@@ -276,7 +260,6 @@ $xs:'(max-width: 575px)';
   }
 }
 
-
 /* Padding Top */
 
 @for $i from 1 through 40 {
@@ -321,108 +304,107 @@ $xs:'(max-width: 575px)';
   }
 }
 
-
-
 //section title animation
 .down-mark-line {
-	position: relative;
-	z-index: 2;
-	display: inline-block;
-	&::before {
-		position: absolute;
-		content: "";
-		left: 0;
-		bottom: 0;
-		width: 100%;
-		z-index: -1;
-		height: 100%;
-		background: url(../src/assets/img/icon/down-mark-line.png);
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: bottom;
-		-webkit-animation: section-animation 3s infinite;
-		animation: section-animation 3s infinite;
-	}
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  &::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+    height: 100%;
+    background: url(../src/assets/img/icon/down-mark-line.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    -webkit-animation: section-animation 3s infinite;
+    animation: section-animation 3s infinite;
+  }
 }
 @keyframes section-animation {
-	0% {
-		width: 0;
-	}
-	15% {
-		width: 100%;
-	}
-	85% {
-		opacity: 1;
-	}
-	90% {
-		width: 100%;
-		opacity: 0;
-	}
-	to {
-		width: 0;
-		opacity: 0;
-	}
+  0% {
+    width: 0;
+  }
+  15% {
+    width: 100%;
+  }
+  85% {
+    opacity: 1;
+  }
+  90% {
+    width: 100%;
+    opacity: 0;
+  }
+  to {
+    width: 0;
+    opacity: 0;
+  }
 }
 .down-mark-line-2 {
-	position: relative;
-	z-index: 2;
-	display: inline-block;
-	&::before {
-		position: absolute;
-		content: "";
-		left: 0;
-		bottom: 8%;
-		width: 100%;
-		z-index: -1;
-		height: 100%;
-		background: url(../src/assets/img/icon/down-mark-line-2.png);
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: bottom;
-		-webkit-animation: section-animation 3s infinite;
-		animation: section-animation 3s infinite;
-	}
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  &::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 8%;
+    width: 100%;
+    z-index: -1;
+    height: 100%;
+    background: url(../src/assets/img/icon/down-mark-line-2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    -webkit-animation: section-animation 3s infinite;
+    animation: section-animation 3s infinite;
+  }
 }
-  @mixin inventualCalenderFieldStyle {
-    .inventual-calender-field-style {
-        .mat-mdc-form-field-has-icon-suffix .mat-mdc-text-field-wrapper {
-          padding: 0px;
-        }
-        .mat-mdc-form-field-flex {
-          height: 55px;
-          line-height: 55px;
-          border: none;
-          padding: 0px 5px 0px 20px;
-          outline: none;
-          font-size: 16px;
-          color: #141517;
-          font-weight: 400;
-          width: 100%;
-          background: #fff;
-          border-radius: 5px;
-        }
-        .mat-mdc-form-field-subscript-wrapper {
-          display: none
-        }
-        .mat-mdc-form-field {
-            display: block;
-            width: 100%;
-        }
-        .mat-mdc-text-field-wrapper:not(.mdc-text-field--outlined) .mat-mdc-form-field-infix {
-          padding: 0px
-        }
-        .mat-mdc-form-field-infix {
-          min-height: 0px;
-          width: 100%;
-        }
-        .mdc-line-ripple {
-          display: none
-        }
-        .mat-mdc-icon-button {
-          color: $theme-color;
-        }
+@mixin inventualCalenderFieldStyle {
+  .inventual-calender-field-style {
+    .mat-mdc-form-field-has-icon-suffix .mat-mdc-text-field-wrapper {
+      padding: 0px;
     }
-    abbr[title] {
-      text-decoration:  none !important;
+    .mat-mdc-form-field-flex {
+      height: 55px;
+      line-height: 55px;
+      border: none;
+      padding: 0px 5px 0px 20px;
+      outline: none;
+      font-size: 16px;
+      color: #141517;
+      font-weight: 400;
+      width: 100%;
+      background: #fff;
+      border-radius: 5px;
+    }
+    .mat-mdc-form-field-subscript-wrapper {
+      display: none;
+    }
+    .mat-mdc-form-field {
+      display: block;
+      width: 100%;
+    }
+    .mat-mdc-text-field-wrapper:not(.mdc-text-field--outlined)
+      .mat-mdc-form-field-infix {
+      padding: 0px;
+    }
+    .mat-mdc-form-field-infix {
+      min-height: 0px;
+      width: 100%;
+    }
+    .mdc-line-ripple {
+      display: none;
+    }
+    .mat-mdc-icon-button {
+      color: $theme-color;
     }
   }
+  abbr[title] {
+    text-decoration: none !important;
+  }
+}

@@ -16,7 +16,7 @@
                             <img [src]="item.photo ? item.photo.gambar : ''" alt="img">
                         </a>
                     </div>
-                    <a [routerLink]="['/blog']" class="blog-tag">
+                    <a class="blog-tag">
                         <i class="fal fa-folder-open"></i>
                         {{ item.kategori }}
                     </a>
@@ -34,7 +34,7 @@
                             </div> -->
                         </div>
                         <div class="blog-content">
-                            <a [routerLink]="['/blog-details']">
+                            <a (click)="handleRoute(item.id)">
                                 <h3>{{ item.judul }}</h3>
                             </a>
                             <a class="blog-btn" (click)="handleRoute(item.id)">Baca Selengkapnya</a>

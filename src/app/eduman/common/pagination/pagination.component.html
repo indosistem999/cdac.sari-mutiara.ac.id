@@ -1,8 +1,22 @@
 <div class="edu-pagination mt-30 mb-20">
     <ul>
-       <li><a href="#"><i class="fal fa-angle-left"></i></a></li>
-       <li class="active"><a href="#"><span>01</span></a> </li>
-       <li><a href="#"><span>02</span></a></li>
-       <li><a href="#"><i class="fal fa-angle-right"></i></a></li>
+        <li>
+            <a (click)="onActionPagination('prev')">
+                <i class="fal fa-angle-left"></i>
+            </a>
+        </li>
+        <li *ngFor="let item of Pagination" class="{{ item == CurrentPage ? 'active' : ''  }}">
+            <a (click)="handlePageChange(item)">
+                <span>
+                    {{ item }}
+                </span>
+            </a>
+        </li>
+        <!-- <li><a href="#"><span>02</span></a></li> -->
+        <li>
+            <a (click)="onActionPagination('next')">
+                <i class="fal fa-angle-right"></i>
+            </a>
+        </li>
     </ul>
 </div>

@@ -11,6 +11,7 @@ import { CoreService } from 'src/app/services/core.service';
 export class BlogsectionComponent implements OnInit {
 
     @Input('title') title!: string;
+    @Input('limit') limit: number = 3;
 
     Berita: any[] = [];
 
@@ -20,7 +21,7 @@ export class BlogsectionComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
-        this._coreService.getBerita(6, 1, "").subscribe((result) => {
+        this._coreService.getBerita(this.limit, 1, "").subscribe((result) => {
             if (result.status) {
                 this.Berita = result.data;
             }
@@ -28,6 +29,8 @@ export class BlogsectionComponent implements OnInit {
     }
 
     handleRoute(id: string): void {
-        this._router.navigate(['/blog-details'], { queryParams: { id: id } });
+        console.log("ID =>", id);
+        // this._router.navigate(['/blog-details'], { queryParams: { id: id } });
+        window.location.href = `blog-details?id=${id}`
     }
 }

@@ -1,16 +1,18 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'app-blogtags',
-  templateUrl: './blogtags.component.html',
-  styleUrls: ['./blogtags.component.scss'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'app-blogtags',
+    templateUrl: './blogtags.component.html',
+    styleUrls: ['./blogtags.component.scss'],
+    encapsulation: ViewEncapsulation.None
 })
 export class BlogtagsComponent implements OnInit {
 
-  constructor() { }
+    @Input('tags') tags: any[] = []
 
-  ngOnInit(): void {
-  }
+    constructor() { }
+
+    ngOnInit(): void {
+    }
 
 }

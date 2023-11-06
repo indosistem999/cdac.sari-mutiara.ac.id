@@ -1,11 +1,18 @@
 <!-- counter-area start -->
 <div class="counter-area pt-120">
     <div class="container">
+        <div class="row mb-5">
+            <div class="col-xl-12 text-center">
+                <div class="section-title mb-50">
+                    <h2>Program <span class="down-mark-line-2">MBKM</span></h2>
+                </div>
+            </div>
+        </div>
         <div class="row">
-            <div class="col-xl-3 col-lg-6 col-md-6">
-                <div class="counter-wrapper text-center mb-30">
-                    <div class="counter-icon">
-                        <svg id="layer2" xmlns="http://www.w3.org/2000/svg" width="50.897" height="56.553"
+            <div *ngFor="let item of Program" class="col-xl-4 col-lg-6 col-md-6 counter-col">
+                <div class="counter-wrapper">
+                    <div class="counter-icon position-relative">
+                        <!-- <svg id="layer2" xmlns="http://www.w3.org/2000/svg" width="50.897" height="56.553"
                             viewBox="0 0 50.897 56.553">
                             <path id="path3518"
                                 d="M26.3.646,1.793,13.689a.834.834,0,0,0,.048,1.522L16.07,21.734h21.4L51.7,15.211a.834.834,0,0,0,.05-1.522L27.244.647a.9.9,0,0,0-.473-.117A1.023,1.023,0,0,0,26.3.646Z"
@@ -65,15 +72,25 @@
                                     d="M12.891,14.818a.943.943,0,0,0-.981,1.022v4.62h1.878V15.84a.943.943,0,0,0-.9-1.022Z"
                                     transform="translate(14.485 -14.817)" fill="#3385c8" />
                             </g>
-                        </svg>
+                        </svg> -->
+
+                        <img [src]="item.photo" alt="photo" class="counter-photo">
+
                         <div class="count-number">
-                            <span class="counter">68,806</span>
-                            <p>Students Enrolled</p>
+                            <span class="counter">
+                                {{ item.judul }}
+                            </span>
+                            <p>
+                                {{ (item.isi_singkat | slice: 0: 150) + '...' }}
+                            </p>
                         </div>
                     </div>
+
+                    <button class="edu-btn btn-sm" type="button" (click)="handleRoute(item.id)">Baca
+                        Selengkapnya</button>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-6 col-md-6">
+            <!-- <div class="col-xl-3 col-lg-6 col-md-6">
                 <div class="counter-wrapper text-center mb-30">
                     <div class="counter-icon">
                         <svg id="online-course" xmlns="http://www.w3.org/2000/svg" width="51.549"
@@ -215,7 +232,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

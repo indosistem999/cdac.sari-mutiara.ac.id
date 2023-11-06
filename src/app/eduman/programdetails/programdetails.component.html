@@ -1,0 +1,36 @@
+<app-headertwo></app-headertwo>
+
+<app-breadcrumb breadcrumbTitle="{{ Detail?.judul }}" breadcrumbSubTitle="{{ Detail?.judul }}">
+</app-breadcrumb>
+
+<div class="blog-area pt-120 pb-90">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 col-lg-12">
+                <div class="blog-main-wrapper mb-0">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12">
+                            <div class="blog-wrapper position-relative blog-details-wrapper mb-30">
+                                <!-- <div class="blog-thumb ">
+                                </div> -->
+                                <div class="blog-content-wrapper">
+                                    <img [src]="Detail?.photo ? Detail?.photo : ''" alt="blog-img" class="mb-4"
+                                        style="height: 10rem; width: auto;">
+                                    <div class="blog-content" [innerHTML]="Detail?.isi_lengkap">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-8 col-md-8">
+                <div class="sidebar-widget-wrapper">
+                    <app-blogrecentpost></app-blogrecentpost>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footerone></app-footerone>

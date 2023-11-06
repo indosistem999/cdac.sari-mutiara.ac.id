@@ -35,6 +35,7 @@ import { SigninmainComponent } from './eduman/signin/signinmain/signinmain.compo
 import { SignupmainComponent } from './eduman/signup/signupmain/signupmain.component';
 import { ForgotpasswordmainComponent } from './eduman/forgotpassword/forgotpasswordmain/forgotpasswordmain.component';
 import { StudentprofilemainComponent } from './eduman/student/studentprofilemain/studentprofilemain.component';
+import { ProgramdetailsComponent } from './eduman/programdetails/programdetails.component';
 
 
 const routes: Routes = [
@@ -122,6 +123,10 @@ const routes: Routes = [
     {
         path: 'blog-details',
         component: BlogdetailsmainComponent
+    },
+    {
+        path: 'program-details',
+        component: ProgramdetailsComponent
     },
     {
         path: 'zoom-class',

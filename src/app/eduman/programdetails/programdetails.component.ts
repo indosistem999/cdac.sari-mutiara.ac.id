@@ -3,11 +3,11 @@ import { ActivatedRoute } from '@angular/router';
 import { CoreService } from 'src/app/services/core.service';
 
 @Component({
-    selector: 'app-blogdetailsmain',
-    templateUrl: './blogdetailsmain.component.html',
-    styleUrls: ['./blogdetailsmain.component.scss']
+    selector: 'app-programdetails',
+    templateUrl: './programdetails.component.html',
+    styleUrls: ['./programdetails.component.scss']
 })
-export class BlogdetailsmainComponent implements OnInit, AfterViewInit {
+export class ProgramdetailsComponent implements OnInit, AfterViewInit {
 
     Detail: any;
 
@@ -25,10 +25,11 @@ export class BlogdetailsmainComponent implements OnInit, AfterViewInit {
     }
 
     private getDetail(id: string) {
-        this._coreService.getDetailBerita(id).subscribe((result) => {
+        this._coreService.getDetailProgram(id).subscribe((result) => {
             if (result.status) {
                 this.Detail = result.data;
             }
         })
     }
+
 }

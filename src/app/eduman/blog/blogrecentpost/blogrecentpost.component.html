@@ -1,22 +1,29 @@
 <div class="sidebar__widget mb-30">
     <div class="sidebar__widget-head mb-35">
-       <h4 class="sidebar__widget-title">Recent posts</h4>
+        <h4 class="sidebar__widget-title">Recent posts</h4>
     </div>
     <div class="sidebar__widget-content">
-       <div class="rc__post-wrapper">
-          <div class="rc__post d-flex align-items-center">
-             <div class="rc__thumb mr-20">
-                <a [routerLink]="['/blog-details']"><img src="assets/img/course/course-10.jpg" alt=""></a>
-             </div>
-             <div class="rc__content">
-                <div class="rc__meta">
-                   <span>October 15, 2021</span>
+        <div class="rc__post-wrapper">
+            <div *ngFor="let item of Recent" class="rc__post d-flex align-items-center">
+                <div class="rc__thumb mr-20">
+                    <a (click)="handleRoute(item.id)">
+                        <img [src]="item.photo ? item.photo.gambar : ''" alt="">
+                    </a>
                 </div>
-                <h6 class="rc__title"><a [routerLink]="['/blog-details']">The Importance Intrinsic
-                      Motivation.</a></h6>
-             </div>
-          </div>
-          <div class="rc__post d-flex align-items-center">
+                <div class="rc__content">
+                    <div class="rc__meta">
+                        <span>
+                            {{ item.tanggal }}
+                        </span>
+                    </div>
+                    <h6 class="rc__title">
+                        <a (click)="handleRoute(item.id)">
+                            {{ item.judul }}
+                        </a>
+                    </h6>
+                </div>
+            </div>
+            <!-- <div class="rc__post d-flex align-items-center">
              <div class="rc__thumb mr-20">
                 <a [routerLink]="['/blog-details']"><img src="assets/img/course/course-11.jpg" alt=""></a>
              </div>
@@ -40,7 +47,7 @@
                       Evolution of Visual</a>
                 </h6>
              </div>
-          </div>
-       </div>
+          </div> -->
+        </div>
     </div>
- </div>
+</div>

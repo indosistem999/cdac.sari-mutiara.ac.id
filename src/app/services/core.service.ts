@@ -27,4 +27,41 @@ export class CoreService {
             headers: this.Header
         });
     }
+
+    getBerita(pageSize: number, pageNumber: number, search?: string): Observable<any> {
+        const params: any = {
+            page_size: pageSize ? pageSize : 4,
+            page_number: pageNumber,
+            search: search
+        };
+
+        return this._httpClient.get<any>(`${environment.endpoint}/berita`, {
+            headers: this.Header,
+            params: params
+        });
+    }
+
+    getDetailBerita(id: string): Observable<any> {
+        return this._httpClient.get<any>(`${environment.endpoint}/berita/detail`, {
+            headers: this.Header,
+            params: {
+                id: id
+            }
+        });
+    }
+
+    getProgram(): Observable<any> {
+        return this._httpClient.get<any>(`${environment.endpoint}/program`, {
+            headers: this.Header,
+        });
+    }
+
+    getDetailProgram(id: string): Observable<any> {
+        return this._httpClient.get<any>(`${environment.endpoint}/program/detail`, {
+            headers: this.Header,
+            params: {
+                id: id
+            }
+        });
+    }
 }

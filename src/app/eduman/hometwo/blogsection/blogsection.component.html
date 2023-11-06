@@ -4,7 +4,12 @@
         <div class="row">
             <div class="col-xl-12 text-center">
                 <div class="section-title mb-50">
-                    <h2>Read Our <span class="down-mark-line-2">Latest</span> News</h2>
+                    <h2 *ngIf="!title">Baca Berita <span class="down-mark-line-2">Terbaru</span> Kami</h2>
+                    <h2 *ngIf="title">
+                        <span class="down-mark-line-2">
+                            {{ title }}
+                        </span>
+                    </h2>
                 </div>
             </div>
         </div>
@@ -13,7 +18,7 @@
                 <div class="blog-wrapper position-relative mb-30">
                     <div class="blog-thumb ">
                         <a (click)="handleRoute(item.id)">
-                            <img [src]="item.photo ? item.photo.gambar : ''" alt="img">
+                            <img [src]="item.photo ? item.photo.gambar : ''" alt="img" class="image_blog">
                         </a>
                     </div>
                     <a class="blog-tag">
@@ -28,14 +33,16 @@
                                     {{ item.tanggal }}
                                 </span>
                             </div>
-                            <!-- <div class="blog-user">
-                                <i class="flaticon-avatar"></i>
-                                <span>Brian Hoff</span>
-                            </div> -->
                         </div>
                         <div class="blog-content">
                             <a (click)="handleRoute(item.id)">
-                                <h3>{{ item.judul }}</h3>
+                                <h3>
+                                    {{
+                                    item.judul.length > 60
+                                    ? (item.judul | slice: 0: 60) + '...'
+                                    : item.judul + '...'
+                                    }}
+                                </h3>
                             </a>
                             <a class="blog-btn" (click)="handleRoute(item.id)">Baca Selengkapnya</a>
                         </div>

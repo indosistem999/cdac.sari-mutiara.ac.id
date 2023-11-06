@@ -5,8 +5,8 @@
 
 <div class="blog-area pt-0 pb-90">
     <div class="container">
-        <div class="row">
-            <div class="col-xl-8 col-lg-12">
+        <div class="row mb-4">
+            <div class="col-xl-12 col-lg-12">
                 <div class="blog-main-wrapper mb-0">
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12">
@@ -60,13 +60,17 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4 col-lg-8 col-md-8">
-                <div class="sidebar-widget-wrapper">
-                    <!-- <app-blogsearch></app-blogsearch> -->
+        </div>
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12">
+                <!-- <div class="sidebar-widget-wrapper">
+                    <app-blogsearch></app-blogsearch>
                     <app-blogrecentpost></app-blogrecentpost>
-                    <!-- <app-blogcategory></app-blogcategory> -->
+                    <app-blogcategory></app-blogcategory>
                     <app-blogtags [tags]="Detail?.tag"></app-blogtags>
-                </div>
+                </div> -->
+
+                <app-blogsection [title]="'Berita Lainnya'"></app-blogsection>
             </div>
         </div>
     </div>

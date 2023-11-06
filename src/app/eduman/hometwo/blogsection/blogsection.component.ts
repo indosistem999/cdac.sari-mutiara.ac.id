@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { CoreService } from 'src/app/services/core.service';
 
@@ -10,7 +10,9 @@ import { CoreService } from 'src/app/services/core.service';
 })
 export class BlogsectionComponent implements OnInit {
 
-    Berita: any[] = []
+    @Input('title') title!: string;
+
+    Berita: any[] = [];
 
     constructor(
         private _router: Router,
@@ -18,7 +20,7 @@ export class BlogsectionComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
-        this._coreService.getBerita(4, 1, "").subscribe((result) => {
+        this._coreService.getBerita(6, 1, "").subscribe((result) => {
             if (result.status) {
                 this.Berita = result.data;
             }

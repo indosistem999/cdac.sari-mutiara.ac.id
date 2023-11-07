@@ -12,6 +12,7 @@ export class BlogsectionComponent implements OnInit {
 
     @Input('title') title!: string;
     @Input('limit') limit: number = 3;
+    @Input('forDetailBerita') forDetailBerita = false;
 
     Berita: any[] = [];
 

@@ -86,8 +86,14 @@
                         </div>
                     </div>
 
-                    <button class="edu-btn btn-sm" type="button" (click)="handleRoute(item.id)">Baca
-                        Selengkapnya</button>
+                    <button *ngIf="item.isi_lengkap.length" class="edu-btn btn-sm" type="button"
+                        (click)="handleRoute(item.id)">
+                        Baca Selengkapnya
+                    </button>
+
+                    <button *ngIf="!item.isi_lengkap.length" class="edu-btn btn-sm" type="button" disabled>
+                        Upcoming
+                    </button>
                 </div>
             </div>
             <!-- <div class="col-xl-3 col-lg-6 col-md-6">

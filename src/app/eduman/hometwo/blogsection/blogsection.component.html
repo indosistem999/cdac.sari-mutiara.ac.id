@@ -14,14 +14,15 @@
             </div>
         </div>
         <div class="row mb-5">
-            <div *ngFor="let item of Berita" class="col-xl-4 col-lg-4 col-md-6">
+            <div *ngFor="let item of Berita"
+                [class]="forDetailBerita ? 'col-xl-12 col-lg-12 col-md-12' : 'col-xl-4 col-lg-4 col-md-6'">
                 <div class="blog-wrapper position-relative mb-30">
-                    <div class="blog-thumb ">
+                    <div *ngIf="!forDetailBerita" class="blog-thumb">
                         <a (click)="handleRoute(item.id)">
                             <img [src]="item.photo ? item.photo.gambar : ''" alt="img" class="image_blog">
                         </a>
                     </div>
-                    <a class="blog-tag">
+                    <a *ngIf="!forDetailBerita" class="blog-tag">
                         <i class="fal fa-folder-open"></i>
                         {{ item.kategori }}
                     </a>
@@ -36,15 +37,19 @@
                         </div>
                         <div class="blog-content">
                             <a (click)="handleRoute(item.id)">
-                                <h3>
+                                <h3 *ngIf="!forDetailBerita">
                                     {{
                                     item.judul.length > 60
                                     ? (item.judul | slice: 0: 60) + '...'
                                     : item.judul + '...'
                                     }}
                                 </h3>
+                                <h5 *ngIf="forDetailBerita" class="mb-0" style="color: #003971;">
+                                    {{ item.judul }}
+                                </h5>
                             </a>
-                            <a class="blog-btn" (click)="handleRoute(item.id)">Baca Selengkapnya</a>
+                            <a *ngIf="!forDetailBerita" class="blog-btn" (click)="handleRoute(item.id)">Baca
+                                Selengkapnya</a>
                         </div>
                     </div>
                 </div>

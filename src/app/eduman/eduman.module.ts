@@ -136,6 +136,7 @@ import { ForgotpasswordmainComponent } from './forgotpassword/forgotpasswordmain
 import { StudentprofilemainComponent } from './student/studentprofilemain/studentprofilemain.component';
 import { ProductpopupComponent } from './shop/productpopup/productpopup.component';
 import { ProgramdetailsComponent } from './programdetails/programdetails.component';
+import { BeritasectionComponent } from './hometwo/beritasection/beritasection.component';
 
 
 
@@ -280,7 +281,8 @@ import { ProgramdetailsComponent } from './programdetails/programdetails.compone
     ForgotpasswordmainComponent,
     StudentprofilemainComponent,
     ProductpopupComponent,
-    ProgramdetailsComponent
+    ProgramdetailsComponent,
+    BeritasectionComponent
   ]
 })
 export class EdumanModule { }

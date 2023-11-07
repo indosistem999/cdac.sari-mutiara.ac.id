@@ -26,7 +26,7 @@
   }
 }
 .hero-area {
-  height: 750px;
+  height: calc(100vh - 10rem);
   // background-color: #edeff5;
   background-repeat: no-repeat;
   background-size: cover;

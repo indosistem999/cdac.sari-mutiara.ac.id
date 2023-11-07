@@ -6,15 +6,15 @@
 <div class="blog-area pt-5 pb-5">
     <div class="container">
         <div class="row">
-            <div class="col-xl-8 col-lg-12">
+            <div class="col-xl-12 col-lg-12">
                 <div class="blog-main-wrapper mb-30">
                     <div class="row">
-                        <div *ngFor="let item of Berita" class="col-xl-12 col-lg-6 col-md-12">
+                        <div *ngFor="let item of Berita" class="col-xl-4 col-lg-4 col-md-12">
                             <div class="blog-wrapper position-relative mb-30">
                                 <div class="blog-thumb ">
                                     <a (click)="handleRoute(item.id)">
                                         <img [src]="item.photo ? item.photo.gambar : ''" alt="img"
-                                            style="height: 20rem; width: 100%; object-fit: cover; object-position: center;">
+                                            style="height: 14rem; width: 100%; object-fit: cover; object-position: center;">
                                     </a>
                                 </div>
                                 <a [routerLink]="['/blog']" class="blog-tag">
@@ -32,9 +32,9 @@
                                     </div>
                                     <div class="blog-content">
                                         <a (click)="handleRoute(item.id)">
-                                            <h3>
+                                            <h5>
                                                 {{ item.judul }}
-                                            </h3>
+                                            </h5>
                                         </a>
                                         <a class="blog-btn" (click)="handleRoute(item.id)">Baca Selengkapnya</a>
                                     </div>
@@ -48,7 +48,7 @@
                     </app-pagination>
                 </div>
             </div>
-            <div class="col-xl-4 col-lg-8 col-md-8">
+            <div class="d-none col-xl-4 col-lg-8 col-md-8">
                 <div class="sidebar-widget-wrapper">
                     <!-- <app-blogsearch></app-blogsearch> -->
                     <app-blogrecentpost></app-blogrecentpost>

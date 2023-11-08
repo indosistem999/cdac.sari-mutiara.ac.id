@@ -1,17 +1,23 @@
 <nav id="mobile-menu">
     <ul>
         <li *ngFor="let item of Menu" class="{{ item.children ? 'menu-item-has-children' : '' }} ">
-            <a [routerLink]="[item.slug]">
+            <a *ngIf="!item.children" (click)="onClickMenu(item)">
+                {{ item.nama_menu }}
+            </a>
+            <a *ngIf="item.children">
                 {{ item.nama_menu }}
             </a>
             <ul *ngIf="item.children" class="sub-menu">
                 <li *ngFor="let data of item.children" class="{{ data.children ? 'menu-item-has-children' : '' }}">
-                    <a [routerLink]="[data.slug]">
+                    <a *ngIf="!data.children" (click)="onClickMenu(data, item)">
+                        {{ data.nama_menu }}
+                    </a>
+                    <a *ngIf="data.children">
                         {{ data.nama_menu }}
                     </a>
                     <ul *ngIf="data.children" class="sub-menu">
                         <li *ngFor="let subdata of data.children">
-                            <a [routerLink]="[subdata.slug]">
+                            <a (click)="onClickMenu(subdata, item)">
                                 {{ subdata.nama_menu }}
                             </a>
                         </li>
@@ -19,58 +25,5 @@
                 </li>
             </ul>
         </li>
-        <!-- <li class="menu-item-has-children"><a [routerLink]="['/shop']">shop</a>
-            <ul class="sub-menu">
-                <li><a [routerLink]="['/shop']">shop</a></li>
-                <li><a [routerLink]="['/shop-details']">shop details</a></li>
-                <li><a [routerLink]="['/wishlist']">wishlist</a></li>
-                <li><a [routerLink]="['/cart']">cart</a></li>
-                <li><a [routerLink]="['/checkout']">checkout</a></li>
-            </ul>
-        </li> -->
-        <!-- <li class="menu-item-has-children"><a href="javascript:void(0)">Pages</a>
-            <ul class="sub-menu">
-                <li><a [routerLink]="['/about']">About</a></li>
-                <li class="menu-item-has-children">
-                    <a [routerLink]="['/instructor']">instructor</a>
-                    <ul class="sub-menu">
-                        <li><a [routerLink]="['/instructor']">instructor</a></li>
-                        <li><a [routerLink]="['/instructor-profile']">instructor profile</a></li>
-                        <li><a [routerLink]="['/student-profile']">Student profile</a></li>
-                        <li><a [routerLink]="['/become-instructor']">become instructor</a></li>
-                    </ul>
-                </li>
-                <li class="menu-item-has-children">
-                    <a [routerLink]="['/zoom-class']">zoom class</a>
-                    <ul class="sub-menu">
-                        <li><a [routerLink]="['/zoom-class']">zoom class</a></li>
-                        <li><a [routerLink]="['/zoom-class-detalis']">zoom class details</a></li>
-                    </ul>
-                </li>
-                <li class="menu-item-has-children"><a [routerLink]="['/blog']">blog</a>
-                    <ul class="sub-menu">
-                        <li><a [routerLink]="['/blog']">blog</a></li>
-                        <li><a [routerLink]="['/blog-details']">blog details</a></li>
-                    </ul>
-                </li>
-                <li class="menu-item-has-children"><a [routerLink]="['/event']">event</a>
-                    <ul class="sub-menu">
-                        <li><a [routerLink]="['/event']">event</a></li>
-                        <li><a [routerLink]="['/event-details']">event details</a></li>
-                    </ul>
-                </li>
-                <li><a [routerLink]="['/membership']">membership plan</a></li>
-                <li class="menu-item-has-children"><a [routerLink]="['/faq-page']">FAQ page</a>
-                    <ul class="sub-menu">
-                        <li><a [routerLink]="['/faq-page']">FAQ page</a></li>
-                        <li><a [routerLink]="['/faq-details']">FAQ details</a></li>
-                    </ul>
-                </li>
-                <li><a [routerLink]="['/signin']">Sign In</a></li>
-                <li><a [routerLink]="['/signup']">Sign Up</a></li>
-                <li><a [routerLink]="['/404-page']">404 page</a></li>
-                <li><a [routerLink]="['/contact']">contact</a></li>
-            </ul>
-        </li> -->
     </ul>
 </nav>

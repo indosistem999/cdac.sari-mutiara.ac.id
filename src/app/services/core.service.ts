@@ -70,4 +70,13 @@ export class CoreService {
             headers: this.Header,
         });
     }
+
+    getContent(id: string): Observable<any> {
+        return this._httpClient.get<any>(`${environment.endpoint}/halaman`, {
+            headers: this.Header,
+            params: {
+                id: id
+            }
+        });
+    }
 }

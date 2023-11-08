@@ -18,7 +18,7 @@
                 [class]="forDetailBerita ? 'col-xl-12 col-lg-12 col-md-12' : 'col-xl-4 col-lg-4 col-md-6'">
                 <div class="blog-wrapper position-relative mb-30">
                     <div *ngIf="!forDetailBerita" class="blog-thumb">
-                        <a (click)="handleRoute(item.id)">
+                        <a (click)="handleRoute(item.judul)">
                             <img [src]="item.photo ? item.photo.gambar : ''" alt="img" class="image_blog">
                         </a>
                     </div>
@@ -36,7 +36,7 @@
                             </div>
                         </div>
                         <div class="blog-content">
-                            <a (click)="handleRoute(item.id)">
+                            <a (click)="handleRoute(item.judul)">
                                 <h3 *ngIf="!forDetailBerita">
                                     {{
                                     item.judul.length > 60
@@ -48,7 +48,7 @@
                                     {{ item.judul }}
                                 </h5>
                             </a>
-                            <a *ngIf="!forDetailBerita" class="blog-btn" (click)="handleRoute(item.id)">Baca
+                            <a *ngIf="!forDetailBerita" class="blog-btn" (click)="handleRoute(item.judul)">Baca
                                 Selengkapnya</a>
                         </div>
                     </div>

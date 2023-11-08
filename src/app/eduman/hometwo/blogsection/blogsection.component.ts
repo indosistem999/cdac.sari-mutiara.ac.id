@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { CoreService } from 'src/app/services/core.service';
 
@@ -8,11 +8,12 @@ import { CoreService } from 'src/app/services/core.service';
     styleUrls: ['./blogsection.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class BlogsectionComponent implements OnInit {
+export class BlogsectionComponent implements OnInit, AfterViewInit {
 
     @Input('title') title!: string;
     @Input('limit') limit: number = 3;
     @Input('forDetailBerita') forDetailBerita = false;
+    @Input('related') related: any[] = [];
 
     Berita: any[] = [];
 
@@ -22,16 +23,24 @@ export class BlogsectionComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
-        this._coreService.getBerita(this.limit, 1, "").subscribe((result) => {
-            if (result.status) {
-                this.Berita = result.data;
+
+    }
+
+    ngAfterViewInit(): void {
+        setTimeout(() => {
+            if (this.forDetailBerita) {
+                this.Berita = this.related;
+            } else {
+                this._coreService.getBerita(this.limit, 1, "").subscribe((result) => {
+                    if (result.status) {
+                        this.Berita = result.data;
+                    }
+                })
             }
-        })
+        }, 1000);
     }
 
     handleRoute(id: string): void {
-        console.log("ID =>", id);
-        // this._router.navigate(['/blog-details'], { queryParams: { id: id } });
-        window.location.href = `blog-details?id=${id}`
+        window.location.href = `blog-details?judul=${id}`
     }
 }

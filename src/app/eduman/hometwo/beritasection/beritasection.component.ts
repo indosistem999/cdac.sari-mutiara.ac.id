@@ -30,6 +30,6 @@ export class BeritasectionComponent implements OnInit {
     }
 
     handleRoute(id: string): void {
-        window.location.href = `blog-details?id=${id}`
+        window.location.href = `blog-details?judul=${id}`
     }
 }

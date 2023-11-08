@@ -36,6 +36,7 @@ import { SignupmainComponent } from './eduman/signup/signupmain/signupmain.compo
 import { ForgotpasswordmainComponent } from './eduman/forgotpassword/forgotpasswordmain/forgotpasswordmain.component';
 import { StudentprofilemainComponent } from './eduman/student/studentprofilemain/studentprofilemain.component';
 import { ProgramdetailsComponent } from './eduman/programdetails/programdetails.component';
+import { HalamandetailsComponent } from './eduman/halamandetails/halamandetails.component';
 
 
 const routes: Routes = [
@@ -117,8 +118,8 @@ const routes: Routes = [
         component: EventdetailsmainComponent
     },
     {
-        path: 'sejarah',
-        component: BlogmainComponent
+        path: 'halaman',
+        component: HalamandetailsComponent
     },
     {
         path: 'blog',

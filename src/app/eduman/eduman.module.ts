@@ -137,6 +137,7 @@ import { StudentprofilemainComponent } from './student/studentprofilemain/studen
 import { ProductpopupComponent } from './shop/productpopup/productpopup.component';
 import { ProgramdetailsComponent } from './programdetails/programdetails.component';
 import { BeritasectionComponent } from './hometwo/beritasection/beritasection.component';
+import { HalamandetailsComponent } from './halamandetails/halamandetails.component';
 
 
 
@@ -282,7 +283,8 @@ import { BeritasectionComponent } from './hometwo/beritasection/beritasection.co
     StudentprofilemainComponent,
     ProductpopupComponent,
     ProgramdetailsComponent,
-    BeritasectionComponent
+    BeritasectionComponent,
+    HalamandetailsComponent
   ]
 })
 export class EdumanModule { }

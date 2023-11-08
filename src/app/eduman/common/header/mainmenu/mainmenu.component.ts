@@ -256,4 +256,19 @@ export class MainmenuComponent implements OnInit {
             }
         })
     }
+
+    onClickMenu(args: any, utama?: any): any {
+        const payload = {
+            utama: utama ? utama : [],
+            item: args
+        };
+
+        if (args.jenis_menu == 'Halaman') {
+            localStorage.setItem('_USILPPG_', JSON.stringify(payload));
+            window.location.href = `halaman?page=${args.nama_menu}`;
+        } else {
+            window.location.href = `${args.id_konten}`;
+        }
+
+    }
 }

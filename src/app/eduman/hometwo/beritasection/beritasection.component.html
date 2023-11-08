@@ -56,7 +56,7 @@
                                         <ng-template *ngFor="let item of Berita" swiperSlide>
                                             <div class="blog-wrapper position-relative mb-30">
                                                 <div class="blog-thumb">
-                                                    <a (click)="handleRoute(item.id)">
+                                                    <a (click)="handleRoute(item.judul)">
                                                         <img [src]="item.photo ? item.photo.gambar : ''" alt="img"
                                                             class="image_blog">
                                                     </a>
@@ -75,16 +75,16 @@
                                                         </div>
                                                     </div>
                                                     <div class="blog-content">
-                                                        <a (click)="handleRoute(item.id)">
+                                                        <a (click)="handleRoute(item.judul)">
                                                             <h3>
                                                                 {{
-                                                                item.judul.length > 60
-                                                                ? (item.judul | slice: 0: 60) + '...'
+                                                                item.judul.length > 40
+                                                                ? (item.judul | slice: 0: 40) + '...'
                                                                 : item.judul + '...'
                                                                 }}
                                                             </h3>
                                                         </a>
-                                                        <a class="blog-btn" (click)="handleRoute(item.id)">
+                                                        <a class="blog-btn" (click)="handleRoute(item.judul)">
                                                             Baca Selengkapnya
                                                         </a>
                                                     </div>

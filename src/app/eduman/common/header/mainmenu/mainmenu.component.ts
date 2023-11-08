@@ -252,7 +252,7 @@ export class MainmenuComponent implements OnInit {
     ngOnInit(): void {
         this._coreService.getMenu().subscribe((result) => {
             if (result.status) {
-                this.Menu = result.data;
+                this.Menu = result.data.sort((a: any, b: any) => { return parseInt(a.urutan) - parseInt(b.urutan) });
             }
         })
     }

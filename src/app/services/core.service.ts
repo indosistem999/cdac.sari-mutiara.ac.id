@@ -79,4 +79,10 @@ export class CoreService {
             }
         });
     }
+
+    getTestimoni(): Observable<any> {
+        return this._httpClient.get<any>(`${environment.endpoint}/testimonial`, {
+            headers: this.Header,
+        });
+    }
 }

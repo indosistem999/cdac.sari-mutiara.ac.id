@@ -1,7 +1,7 @@
 <app-headertwo></app-headertwo>
 
 <div class="container">
-    <div class="px-4">
+    <div class="" style="padding-left: 9rem; padding-right: 9rem;">
         <app-breadcrumb breadcrumbTitle="{{ Detail?.judul }}" breadcrumbSubTitle="{{ Detail?.judul }}">
         </app-breadcrumb>
     </div>
@@ -9,7 +9,7 @@
 
 <div class="blog-area pt-0 pb-90">
     <div class="container">
-        <div class="blog-meta px-5">
+        <div class="blog-meta padding-blog">
             <div class="blog-date">
                 <i class="flaticon-calendar"></i>
                 <span>
@@ -22,7 +22,7 @@
             </div>
         </div>
 
-        <div class="row mb-4 px-5">
+        <div class="row mb-4 padding-blog">
             <div class="col-xl-12 col-lg-12">
                 <div class="blog-main-wrapper mb-0">
                     <div class="row">
@@ -67,15 +67,8 @@
             </div>
         </div>
 
-        <div class="row px-5">
+        <div class="row padding-blog">
             <div class="col-xl-12 col-lg-12 col-md-12">
-                <!-- <div class="sidebar-widget-wrapper">
-                    <app-blogsearch></app-blogsearch>
-                    <app-blogrecentpost></app-blogrecentpost>
-                    <app-blogcategory></app-blogcategory>
-                    <app-blogtags [tags]="Detail?.tag"></app-blogtags>
-                </div> -->
-
                 <app-blogsection [title]="'Berita Lainnya'" [limit]="6" [forDetailBerita]="true" [related]="Related">
                 </app-blogsection>
             </div>

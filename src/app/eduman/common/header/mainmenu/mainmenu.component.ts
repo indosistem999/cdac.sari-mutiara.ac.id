@@ -265,7 +265,7 @@ export class MainmenuComponent implements OnInit {
 
         if (args.jenis_menu == 'Halaman') {
             localStorage.setItem('_USILPPG_', JSON.stringify(payload));
-            window.location.href = `halaman?page=${args.nama_menu}`;
+            window.location.href = `halaman?page=${args.slug}`;
         } else {
             window.location.href = `${args.id_konten}`;
         }

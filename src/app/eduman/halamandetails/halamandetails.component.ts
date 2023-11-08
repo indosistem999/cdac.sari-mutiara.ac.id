@@ -11,7 +11,7 @@ export class HalamandetailsComponent {
 
     Detail: any;
 
-    PageName = this._activatedRoute.snapshot.queryParams['page'];
+    PageName: any;
 
     PageDetail = localStorage.getItem('_USILPPG_') ? JSON.parse(localStorage.getItem('_USILPPG_') as any) : null;
 
@@ -25,7 +25,8 @@ export class HalamandetailsComponent {
 
     ngAfterViewInit(): void {
         setTimeout(() => {
-            if (this.PageName) {
+            if (this.PageDetail) {
+                this.PageName = this.PageDetail.item.nama_menu;
                 this.getDetail(this.PageDetail.item.id_konten);
             }
         }, 100);
@@ -35,6 +36,7 @@ export class HalamandetailsComponent {
         this._coreService.getContent(id).subscribe((result) => {
             if (result.status) {
                 this.Detail = result.data;
+                console.log(this.Detail)
             }
         })
     }

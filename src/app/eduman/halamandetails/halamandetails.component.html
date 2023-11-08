@@ -19,7 +19,7 @@
 </div>
 <!-- hero-area-end -->
 
-<div class="blog-area pt-5 pb-90">
+<div class="blog-area pt-5 pb-90 padding-blog">
     <div class="container">
         <div class="row mb-4">
             <div class="col-xl-12 col-lg-12">
@@ -27,13 +27,18 @@
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12">
                             <div class="blog-wrapper position-relative blog-details-wrapper mb-30">
-                                <div class="blog-thumb ">
-                                    <img *ngIf="Detail?.url_gambar?.length" [src]="Detail?.url_gambar?.length"
-                                        alt="blog-img">
-                                </div>
                                 <div class="blog-content-wrapper">
-                                    <div class="blog-content" [innerHTML]="Detail?.isi">
+                                    <div class="row">
+                                        <div class="col-xl-3 col-lg-3 col-md-3 col-3">
+                                            <img *ngIf="Detail?.url_gambar?.length" [src]="Detail?.url_gambar"
+                                                alt="blog-img">
+                                        </div>
+                                        <div class="col-xl-9 col-lg-9 col-md-9 col-9">
+                                            <div class="blog-content" [innerHTML]="Detail?.isi">
+                                            </div>
+                                        </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>

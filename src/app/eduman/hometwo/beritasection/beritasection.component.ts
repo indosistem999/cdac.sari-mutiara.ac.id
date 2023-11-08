@@ -30,6 +30,7 @@ export class BeritasectionComponent implements OnInit {
     }
 
     handleRoute(id: string): void {
-        window.location.href = `blog-details?judul=${id}`
+        let title = id.toLowerCase().replace(/\s/g, '-');
+        window.location.href = `blog-details?judul=${title}`
     }
 }

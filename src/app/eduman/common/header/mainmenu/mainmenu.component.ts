@@ -1,4 +1,5 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { CoreService } from 'src/app/services/core.service';
 
 @Component({
     selector: 'app-mainmenu',
@@ -6,9 +7,9 @@ import { Component, ViewEncapsulation } from '@angular/core';
     styleUrls: ['./mainmenu.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class MainmenuComponent {
+export class MainmenuComponent implements OnInit {
 
-    Menu: any[] = [
+    FakeMenu: any[] = [
         {
             title: 'Tentang Kami',
             child: [
@@ -240,5 +241,19 @@ export class MainmenuComponent {
                 },
             ]
         },
-    ]
+    ];
+
+    Menu: any[] = [];
+
+    constructor(
+        private _coreService: CoreService,
+    ) { }
+
+    ngOnInit(): void {
+        this._coreService.getMenu().subscribe((result) => {
+            if (result.status) {
+                this.Menu = result.data;
+            }
+        })
+    }
 }

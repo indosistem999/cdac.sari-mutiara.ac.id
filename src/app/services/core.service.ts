@@ -64,4 +64,10 @@ export class CoreService {
             }
         });
     }
+
+    getMenu(): Observable<any> {
+        return this._httpClient.get<any>(`${environment.endpoint}/menu_utama`, {
+            headers: this.Header,
+        });
+    }
 }

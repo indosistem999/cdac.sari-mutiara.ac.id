@@ -117,6 +117,10 @@ const routes: Routes = [
         component: EventdetailsmainComponent
     },
     {
+        path: 'sejarah',
+        component: BlogmainComponent
+    },
+    {
         path: 'blog',
         component: BlogmainComponent
     },

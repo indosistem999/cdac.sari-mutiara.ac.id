@@ -1,16 +1,16 @@
 <nav id="mobile-menu">
     <ul>
-        <li *ngFor="let item of Menu" class="{{ item.child ? 'menu-item-has-children' : '' }} ">
+        <li *ngFor="let item of Menu" class="{{ item.children ? 'menu-item-has-children' : '' }} ">
             <a [routerLink]="[item.slug]">
                 {{ item.nama_menu }}
             </a>
-            <ul *ngIf="item.child" class="sub-menu">
-                <li *ngFor="let data of item.child" class="{{ data.child ? 'menu-item-has-children' : '' }}">
+            <ul *ngIf="item.children" class="sub-menu">
+                <li *ngFor="let data of item.children" class="{{ data.children ? 'menu-item-has-children' : '' }}">
                     <a [routerLink]="[data.slug]">
                         {{ data.nama_menu }}
                     </a>
-                    <ul *ngIf="data.child" class="sub-menu">
-                        <li *ngFor="let subdata of data.child">
+                    <ul *ngIf="data.children" class="sub-menu">
+                        <li *ngFor="let subdata of data.children">
                             <a [routerLink]="[subdata.slug]">
                                 {{ subdata.nama_menu }}
                             </a>

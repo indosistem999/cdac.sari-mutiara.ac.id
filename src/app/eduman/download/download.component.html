@@ -1,1 +1,45 @@
-<p>download works!</p>
+<app-headertwo></app-headertwo>
+<app-breadcrumb breadcrumbTitle="Download" breadcrumbSubTitle="Download"></app-breadcrumb>
+
+<!-- blog-area-start -->
+
+<div class="blog-area pt-5 pb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12">
+                <div class="blog-main-wrapper mb-30">
+                    <div class="row">
+                        <div *ngFor="let item of Testimoni" class="col-xl-4 col-lg-4 col-md-12">
+                            <a *ngIf="item.url" [href]="item.url" target="_blank">
+                                <div class="categories-wrapper text-center mb-30">
+                                    <div class="categories-content">
+                                        <p class="mb-0" style="font-size: 17px; font-weight: 800;">
+                                            {{ item.judul }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a *ngIf="!item.url">
+                                <div class="categories-wrapper text-center mb-30">
+                                    <div class="categories-content">
+                                        <p class="mb-0" style="font-size: 17px; font-weight: 800;">
+                                            {{ item.judul }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                    <app-pagination [length]="Length" [pageSize]="PageSize" [pageNumber]="PageNumber"
+                        (onPageChange)="handlePageChange($event)">
+                    </app-pagination>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- blog-area-start -->
+
+<app-footerone></app-footerone>

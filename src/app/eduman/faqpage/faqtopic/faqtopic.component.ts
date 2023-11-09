@@ -9,6 +9,7 @@ import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } fro
 export class FaqtopicComponent implements OnInit {
 
     @Input('kategori') kategori: any;
+    @Input('forSection') forSection = false;
 
     @Output('onClick') onClick = new EventEmitter<any>();
 

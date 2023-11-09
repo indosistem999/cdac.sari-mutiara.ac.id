@@ -45,6 +45,9 @@ import { PengumumanComponent } from './eduman/pengumuman/pengumuman.component';
 import { PengumumandetailsComponent } from './eduman/pengumumandetails/pengumumandetails.component';
 import { AgendaComponent } from './eduman/agenda/agenda.component';
 import { AgendadetailsComponent } from './eduman/agendadetails/agendadetails.component';
+import { PrestasiComponent } from './eduman/prestasi/prestasi.component';
+import { PrestasidetailsComponent } from './eduman/prestasidetails/prestasidetails.component';
+import { DownloadComponent } from './eduman/download/download.component';
 
 
 const routes: Routes = [
@@ -220,6 +223,18 @@ const routes: Routes = [
     {
         path: 'faq-details',
         component: FaqdetailsmainComponent
+    },
+    {
+        path: 'download',
+        component: DownloadComponent
+    },
+    {
+        path: 'prestasi',
+        component: PrestasiComponent
+    },
+    {
+        path: 'prestasi-details',
+        component: PrestasidetailsComponent
     },
     {
         path: 'signin',

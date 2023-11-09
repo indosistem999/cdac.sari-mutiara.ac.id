@@ -1,21 +1,37 @@
 <app-headertwo *ngIf="!forSection"></app-headertwo>
 
-<app-faqbanner *ngIf="!forSection"></app-faqbanner>
+<div *ngIf="!forSection" class="features-area pt-45 pb-15" [style.background-image]="'url(assets/img/fact/fact.png)'"
+    style="background-position: bottom; background-repeat: no-repeat; background-size: cover;">
+    <div class="container">
+        <div class="row">
+            <div *ngIf="!forSection" class="col-xl-12">
+                <div class="faq-tittle-info text-center pt-55 mb-50 text-white">
+                    <h3>Frequently Asked Questions</h3>
+                </div>
+            </div>
+
+            <div *ngIf="!forSection" class="col-xl-12 mb-3">
+                <app-faqtopic [kategori]="Kategori" (onClick)="handleClickKategori($event)" [forSection]="forSection">
+                </app-faqtopic>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- faq-area-start -->
 <div class="faq-topic-area pb-90">
     <div class="container">
-
         <div class="row">
             <div class="col-xl-12">
                 <div class="faq-area pt-30 pb-30">
                     <div class="row">
-                        <div class="col-xl-12">
+                        <div *ngIf="forSection" class="col-xl-12">
                             <div class="faq-tittle-info text-center pt-55 mb-50">
                                 <h3>Frequently Asked Questions</h3>
                             </div>
                         </div>
 
-                        <div class="col-xl-12 mb-3">
+                        <div *ngIf="forSection" class="col-xl-12 mb-3">
                             <app-faqtopic [kategori]="Kategori" (onClick)="handleClickKategori($event)"></app-faqtopic>
                         </div>
 

@@ -158,6 +158,11 @@ const routes: Routes = [
         component: PengumumanComponent
     },
     {
+        path: 'universitas',
+        redirectTo: 'pengumuman',
+        pathMatch: 'full'
+    },
+    {
         path: 'pengumuman-details',
         component: PengumumandetailsComponent
     },
@@ -235,6 +240,10 @@ const routes: Routes = [
     },
     {
         path: 'prestasi',
+        component: PrestasiComponent
+    },
+    {
+        path: 'tingkat-nasional',
         component: PrestasiComponent
     },
     {

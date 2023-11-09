@@ -6,8 +6,26 @@
 <div class="blog-area pt-5 pb-5">
     <div class="container">
         <div class="row">
+            <div class="col-xl-12 col-lg-12 mb-4">
+                <div class="row justify-content-between">
+                    <div class="col-xl-4">
+                        <select class="form-select" aria-label="Filter berdasarkan kategori"
+                            (change)="handleChangeKategori($event)">
+                            <option selected>Filter berdasarkan kategori</option>
+                            <option *ngFor="let item of Kategori" value="{{ item.id }}">
+                                {{ item.nama }}
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="col-xl-4">
+                        <input #Search type="text" class="form-control" placeholder="Cari judul disini"
+                            (keyup)="handleSearchClientSide(Search.value)">
+                    </div>
+                </div>
+            </div>
             <div class="col-xl-12 col-lg-12">
-                <div class="blog-main-wrapper mb-30">
+                <!-- <div class="blog-main-wrapper mb-30">
                     <div class="row">
                         <div *ngFor="let item of Testimoni" class="col-xl-4 col-lg-4 col-md-12">
                             <a *ngIf="item.url" [href]="item.url" target="_blank">
@@ -34,9 +52,36 @@
                     <app-pagination [length]="Length" [pageSize]="PageSize" [pageNumber]="PageNumber"
                         (onPageChange)="handlePageChange($event)">
                     </app-pagination>
-                </div>
+                </div> -->
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Judul</th>
+                            <th scope="col">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of Testimoni; let i = index">
+                            <th scope="row">
+                                {{ i + 1 }}
+                            </th>
+                            <td>
+                                {{ item.judul }}
+                            </td>
+                            <td>
+                                <span>
+                                    Unduh
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
+            <app-pagination [length]="Length" [pageSize]="PageSize" [pageNumber]="PageNumber"
+                (onPageChange)="handlePageChange($event)">
+            </app-pagination>
         </div>
     </div>
 </div>

@@ -13,7 +13,7 @@
             <div class="blog-date">
                 <i class="flaticon-calendar"></i>
                 <span>
-                    {{ Detail?.tanggal }}
+                    {{ Detail?.tanggal | date: 'dd MMMM yyyy' }}
                 </span>
             </div>
             <div class="blog-user">
@@ -33,7 +33,7 @@
                                 </div>
                                 <div class="blog-tag">
                                     <i class="fal fa-folder-open"></i>
-                                    <a [routerLink]="['/course']">News</a>
+                                    <a>News</a>
                                 </div>
                                 <div class="blog-content-wrapper">
                                     <div class="blog-content" [innerHTML]="Detail?.isi">

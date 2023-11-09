@@ -237,15 +237,23 @@ export class CoreService {
         });
     }
 
-    getDownload(pageSize: number, pageNumber: number): Observable<any> {
+    getDownload(pageSize: number, pageNumber: number, search?: string, id_kategori?: string): Observable<any> {
         const params: any = {
             page_size: pageSize ? pageSize : 4,
             page_number: pageNumber,
+            search: search,
+            id_kategori: id_kategori,
         };
 
         return this._httpClient.get<any>(`${environment.endpoint}/download`, {
             headers: this.Header,
             params: params
+        });
+    }
+
+    getDownloadKategori(): Observable<any> {
+        return this._httpClient.get<any>(`${environment.endpoint}/download/kategori`, {
+            headers: this.Header,
         });
     }
 

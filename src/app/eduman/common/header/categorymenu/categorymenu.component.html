@@ -1,34 +1,7 @@
 <nav>
     <ul>
-        <li class="item-has-children">
-            <a>Mahasiswa</a>
-            <ul class="category-submenu">
-                <li><a [routerLink]="['/course']">LMS-Spada-USM-Indonesia</a></li>
-                <li><a [routerLink]="['/course']">Merdeka Belajar - Kampus Merdeka (MBKM)</a></li>
-                <li><a [routerLink]="['/course']">E-Journal</a></li>
-                <li><a [routerLink]="['/course']">E-Learning</a></li>
-                <li><a [routerLink]="['/course']">Perpustakaan</a></li>
-                <li><a [routerLink]="['/course']">Repository</a></li>
-            </ul>
-        </li>
-        <li class="item-has-children">
-            <a>Dosen</a>
-            <ul class="category-submenu">
-                <li><a [routerLink]="['/course']">LMS-Spada-USM-Indonesia</a></li>
-                <li><a [routerLink]="['/course']">Merdeka Belajar - Kampus Merdeka (MBKM)</a></li>
-                <li><a [routerLink]="['/course']">Aplikasi Bendahara Pengeluaran</a></li>
-                <li><a [routerLink]="['/course']">Aplikasi Surat</a></li>
-                <li><a [routerLink]="['/course']">E- Journal</a></li>
-                <li><a [routerLink]="['/course']">Management Asset</a></li>
-                <li><a [routerLink]="['/course']">Repository</a></li>
-                <li><a [routerLink]="['/course']">SIM-EPK KEPPKN</a></li>
-            </ul>
-        </li>
-        <li class="item-has-children">
-            <a>Alumni</a>
-            <ul class="category-submenu">
-                <li><a [routerLink]="['/course']">Aplikasi Alumni</a></li>
-            </ul>
+        <li *ngFor="let item of Layanan" class="item">
+            <a [href]="item.url" target="_blank">{{ item.nama_layanan }}</a>
         </li>
     </ul>
 </nav>

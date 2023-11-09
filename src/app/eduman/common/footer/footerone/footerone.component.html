@@ -152,10 +152,14 @@
                             </div>
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-4">
-                            <a type="button" class="btn btn-primary"
+                            <a type="button" class="btn btn-secondary"
                                 href="https://www.google.com/maps/search/?api=1&query={{ Identitas?.latitude }},{{ Identitas?.longitude }}"
                                 target="_blank">
-                                Arahkan Ke Map <i class="fas fa-paper-plane"></i>
+                                Arahkan Ke Map
+                            </a>
+
+                            <a type="button" class="btn btn-primary mx-2" [routerLink]="['/contact']">
+                                Hubungi Kami
                             </a>
                         </div>
                     </div>

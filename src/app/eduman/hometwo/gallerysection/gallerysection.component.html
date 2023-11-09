@@ -56,11 +56,11 @@
                                         <ng-template *ngFor="let item of Gallery" swiperSlide>
                                             <a (click)="handleRoute(item)" class="mb-2">
                                                 <div class="categories-wrapper gallery text-center mb-30">
-                                                    <div class="categiories-thumb mb-3">
+                                                    <div class="categiories-thumb mb-0">
                                                         <img [src]="item.gambar" alt="" class="image_testimoni">
                                                     </div>
-                                                    <div class="categories-content">
-                                                        <p class="mb-2" style="font-size: 15px;">
+                                                    <div class="categories-content gallery">
+                                                        <p class="mb-0" style="font-size: 15px;">
                                                             {{ item.judul }}
                                                         </p>
                                                     </div>

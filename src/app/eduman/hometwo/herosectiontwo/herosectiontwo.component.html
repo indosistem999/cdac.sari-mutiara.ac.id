@@ -1,22 +1,6 @@
 <!-- hero-area start-->
-<div class="hero-area hero-height d-flex align-items-center position-relative fix"
+<!-- <div class="hero-area hero-height d-flex align-items-center position-relative fix"
     [style.background-image]="'url(' +  SelectedSlider?.gambar + ')'">
-    <!-- <img class="hero-shape-5" src="assets/img/shape/shape-02.png" alt="shape"> -->
-    <!-- <img class="hero-shape-1" src="assets/img/shape/shape-03.png" alt="shape"> -->
-    <!-- <img class="hero-shape-6" src="assets/img/shape/shape-01.png" alt="shape"> -->
-    <!-- <img class="hero-shape-7" src="assets/img/shape/shape-10.png" alt="shape"> -->
-    <div class="hero-shap-5 d-none">
-        <div class="hero-card">
-            <img src="assets/img/shape/slider-card-1.png" alt="image not found">
-            <img src="assets/img/shape/slider-card-2.png" alt="image not found">
-            <img src="assets/img/shape/slider-card-3.png" alt="image not found">
-            <img src="assets/img/shape/slider-card-4.png" alt="image not found">
-            <span><i class="far fa-plus"></i></span>
-        </div>
-        <h5>More than <span>21,500+</span> students
-            enrolled around the world
-        </h5>
-    </div>
     <div class="row justify-content-between align-items-center px-5" style="width: 100%">
         <div class="col-auto text-center py-2 px-3 rounded bg-secondary" style="cursor: pointer"
             (click)="onActionSlider('prev', CurrentSliderIndex)">
@@ -41,6 +25,54 @@
                 <i class="fas fa-chevron-right"></i>
             </p>
         </div>
+    </div>
+</div> -->
+
+<div class="hero-area hero-height d-flex align-items-center position-relative fix">
+    <div class="swiper-wrapper">
+        <swiper class="mySwiper" [slidesPerView]="1" [spaceBetween]="30" [loop]="true" [pagination]="true" [autoplay]="{
+                delay: 2500,
+                disableOnInteraction: false
+            }" [navigation]="{
+                nextEl: '.category-button-next',
+                prevEl: '.category-button-prev'
+            }" [breakpoints]="{
+                '320': {
+                    slidesPerView: 1,
+                    spaceBetween: 15
+                },
+                '480': {
+                    slidesPerView: 1,
+                    spaceBetween: 15
+                },
+                '640': {
+                    slidesPerView: 1,
+                    spaceBetween: 15
+                },
+                '991': {
+                    slidesPerView: 1,
+                    spaceBetween: 30
+                },
+                '1200': {
+                    slidesPerView: 1,
+                    spaceBetween: 30
+                },
+                '1400': {
+                    slidesPerView: 1,
+                    spaceBetween: 30
+                }
+            }">
+
+            <ng-template *ngFor="let item of Slider" swiperSlide>
+                <a class="mb-2" (click)="onClickSlider(item)">
+                    <img [src]="item.gambar" alt="img_slider" class="img_slider">
+                </a>
+            </ng-template>
+        </swiper>
+    </div>
+    <div class="category-nav">
+        <div id="slider-prev" class="category-button-prev slider"><i class="far fa-long-arrow-left"></i></div>
+        <div id="slider-next" class="category-button-next slider"><i class="far fa-long-arrow-right"></i></div>
     </div>
 </div>
 <!-- hero-area end-->

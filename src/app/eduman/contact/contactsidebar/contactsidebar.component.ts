@@ -1,16 +1,82 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'app-contactsidebar',
-  templateUrl: './contactsidebar.component.html',
-  styleUrls: ['./contactsidebar.component.scss'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'app-contactsidebar',
+    templateUrl: './contactsidebar.component.html',
+    styleUrls: ['./contactsidebar.component.scss'],
+    encapsulation: ViewEncapsulation.None
 })
-export class ContactsidebarComponent implements OnInit {
+export class ContactsidebarComponent implements OnInit, AfterViewInit {
 
-  constructor() { }
+    @Input('Identitas') Identitas: any;
 
-  ngOnInit(): void {
-  }
+    Kontak: any[] = [];
 
+    constructor() { }
+
+    ngOnInit(): void {
+    }
+
+    ngAfterViewInit(): void {
+        setTimeout(() => {
+            this.Kontak = [
+                {
+                    id: 'wa',
+                    icon: 'fab fa-whatsapp',
+                    title: 'Whatsapp',
+                    value: this.Identitas?.wa,
+                    url: '',
+                },
+                {
+                    id: 'telegram',
+                    icon: 'fab fa-telegram',
+                    title: 'Telegram',
+                    value: this.Identitas?.telegram,
+                    url: '',
+                },
+                {
+                    id: 'fb',
+                    icon: 'fab fa-facebook',
+                    title: 'Facebook',
+                    value: this.Identitas?.fb,
+                    url: '',
+                },
+                {
+                    id: 'ig',
+                    icon: 'fab fa-instagram',
+                    title: 'Instagram',
+                    value: this.Identitas?.ig,
+                    url: '',
+                },
+                {
+                    id: 'email',
+                    icon: 'fas fa-envelope',
+                    title: 'Email',
+                    value: this.Identitas?.email,
+                    url: '',
+                },
+                {
+                    id: 'youtube',
+                    icon: 'fab fa-youtube',
+                    title: 'Youtube',
+                    value: this.Identitas?.yt,
+                    url: '',
+                },
+                {
+                    id: 'tiktok',
+                    icon: 'fab fa-tiktok',
+                    title: 'Tiktok',
+                    value: this.Identitas?.tiktok,
+                    url: '',
+                },
+                {
+                    id: 'twitter',
+                    icon: 'fab fa-twitter',
+                    title: 'Twitter',
+                    value: this.Identitas?.tw,
+                    url: '',
+                },
+            ]
+        }, 500);
+    }
 }

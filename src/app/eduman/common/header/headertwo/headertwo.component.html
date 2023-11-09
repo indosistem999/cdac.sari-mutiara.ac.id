@@ -185,8 +185,8 @@
                     <div class="col-xl-8 col-lg-8">
                         <div class="header-top-login d-flex f-right">
                             <div class="header-social">
-                                <a *ngFor="let item of TopMenu" href="{{ item.id_konten }}" class="text-white me-2"
-                                    style="font-size: 12px;">
+                                <a *ngFor="let item of TopMenu" href="{{ item.id_konten }}" target="_blank"
+                                    class="text-white me-2" style="font-size: 12px;">
                                     {{ item.nama_menu }}
                                 </a>
                                 <!-- <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
@@ -212,8 +212,6 @@
                             <a [routerLink]="['/']">
                                 <img [src]="Identitas?.logo" alt="logo" style="height: 3rem">
                             </a>
-                            <span [innerHTML]="Identitas?.instansi" class="text-center lh-sm fs-6">
-                            </span>
                         </div>
                     </div>
                     <div class="col-auto">

@@ -149,6 +149,9 @@ import { PengumumandetailsComponent } from './pengumumandetails/pengumumandetail
 import { AgendaComponent } from './agenda/agenda.component';
 import { PengumumanComponent } from './pengumuman/pengumuman.component';
 import { LayananComponent } from './hometwo/layanan/layanan.component';
+import { DownloadComponent } from './download/download.component';
+import { PrestasiComponent } from './prestasi/prestasi.component';
+import { PrestasidetailsComponent } from './prestasidetails/prestasidetails.component';
 
 
 
@@ -306,7 +309,10 @@ import { LayananComponent } from './hometwo/layanan/layanan.component';
     PengumumandetailsComponent,
     AgendaComponent,
     PengumumanComponent,
-    LayananComponent
+    LayananComponent,
+    DownloadComponent,
+    PrestasiComponent,
+    PrestasidetailsComponent
   ]
 })
 export class EdumanModule { }

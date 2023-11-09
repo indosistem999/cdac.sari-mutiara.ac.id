@@ -162,6 +162,10 @@ const routes: Routes = [
         component: AgendaComponent
     },
     {
+        path: 'kegiatan',
+        component: AgendaComponent
+    },
+    {
         path: 'agenda-details',
         component: AgendadetailsComponent
     },

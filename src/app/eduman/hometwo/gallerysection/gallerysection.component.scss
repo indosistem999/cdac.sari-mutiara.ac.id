@@ -11,16 +11,30 @@
   background: $white;
   box-shadow: 0px 20px 30px rgba(24, 44, 74, 0.05);
   border-radius: 10px;
+  height: 20.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
 .categiories-thumb {
   transition: 0.3s;
   svg {
     margin-bottom: 30px;
   }
 }
+
 .categories-wrapper:hover .categiories-thumb {
   transform: translateY(-10px);
 }
+
+.categories-content.gallery {
+  height: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .categories-content {
   h4 {
     margin-bottom: 5px;
@@ -39,6 +53,7 @@
   top: -28%;
   left: -5%;
 }
+
 .category-shap-02 {
   position: absolute;
   top: 0;
@@ -51,6 +66,7 @@
     display: none;
   }
 }
+
 .category-button-prev {
   width: 45px;
   height: 45px;
@@ -75,6 +91,7 @@
     color: $white;
   }
 }
+
 .category-button-next {
   width: 45px;
   height: 45px;

@@ -1,6 +1,11 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
 import { CoreService } from 'src/app/services/core.service';
+// import Swiper core and required modules
+import SwiperCore, { Autoplay, Navigation } from "swiper";
+
+// install Swiper modules
+SwiperCore.use([Autoplay, Navigation]);
 
 @Component({
     selector: 'app-herosectiontwo',
@@ -30,7 +35,10 @@ export class HerosectiontwoComponent implements OnInit, OnDestroy {
             .pipe(takeUntil(this.Destroy$))
             .subscribe((result) => {
                 this.Slider = result.status ? result.data : [];
-                this.SelectedSlider = result.status ? result.data[0] : null;
+
+                console.log(this.Slider);
+
+                // this.SelectedSlider = result.status ? result.data[0] : null;
             });
     }
 
@@ -46,7 +54,12 @@ export class HerosectiontwoComponent implements OnInit, OnDestroy {
         }
 
         this.SelectedSlider = this.Slider[this.CurrentSliderIndex];
-        console.log(this.SelectedSlider);
+    }
+
+    onClickSlider(item: any): void {
+        if (item.url) {
+            window.open(item.url)
+        }
     }
 
     ngOnDestroy(): void {

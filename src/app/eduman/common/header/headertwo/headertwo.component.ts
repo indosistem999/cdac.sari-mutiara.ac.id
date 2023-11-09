@@ -68,6 +68,10 @@ export class HeadertwoComponent implements OnInit {
         this._coreService.getIdentitas().subscribe((result) => {
             if (result.status) {
                 this.Identitas = result.data;
+
+                setTimeout(() => {
+                    this._coreService.Loading$.next(false);
+                }, 1000);
             }
         });
 

@@ -5,9 +5,16 @@
             <div class="col-xl-12 col-lg-12 col-md-12 ">
                 <div class="partner-box mb-30">
                     <div class="section-title mb-30 text-center">
-                        <h2>Layanan
-                            <span class="down-mark-line-2">Kami</span>
+                        <img src="../../../../assets/img/agenda-pengumuman/block-icon-knowledge.png" alt="img"
+                            style="height: 5rem;">
+                        <h2>Our
+                            <span class="down-mark-line-2">Service</span>
                         </h2>
+                        <h5>
+                            We prioritise knowledge sharing.
+                            <br>
+                            We make every possible way to stay connected with you by utilising plenty of platforms.
+                        </h5>
                     </div>
                 </div>
             </div>
@@ -41,26 +48,26 @@
                                                 },
                                                 '991': {
                                                     slidesPerView: Layanan.length > 3 ? 3 : 1,
-                                                    spaceBetween: 30
+                                                    spaceBetween: 15
                                                 },
                                                 '1200': {
-                                                    slidesPerView: Layanan.length > 5 ? 3 : 1,
-                                                    spaceBetween: 30
+                                                    slidesPerView: Layanan.length > 5 ? 5 : 5,
+                                                    spaceBetween: 15
                                                 },
                                                 '1400': {
-                                                    slidesPerView: Layanan.length > 5 ? 3 : 1,
-                                                    spaceBetween: 30
+                                                    slidesPerView: Layanan.length > 5 ? 5 : 5,
+                                                    spaceBetween: 15
                                                 }
                                             }">
 
                                             <ng-template *ngFor="let item of Layanan" swiperSlide>
-                                                <a class="mb-2" href="{{ item.url }}">
+                                                <a class="mb-2" href="{{ item.url }}" target="_blank">
                                                     <div class="categories-wrapper layanan text-center mb-30">
                                                         <div class="categiories-thumb mb-3">
                                                             <img [src]="item.icon" alt="">
                                                         </div>
                                                         <div class="categories-content">
-                                                            <p class="mb-2" style="font-size: 15px;">
+                                                            <p class="mb-2" style="font-size: 14px;">
                                                                 {{ item.nama_layanan }}
                                                             </p>
                                                         </div>

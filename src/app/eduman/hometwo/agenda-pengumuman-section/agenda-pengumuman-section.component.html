@@ -21,7 +21,7 @@
                         </div>
                         <div class="row" style="height: 20rem; overflow-y: auto;">
                             <div *ngFor="let item of Pengumuman"
-                                class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-2 border-bottom"
+                                class="col-lg-12 col-md-12 col-sm-12 col-xs-12 border-bottom mb-2 pb-2"
                                 (click)="handleRoutePengumuman(item.id)">
                                 <h5 class="mb-0 text-white">
                                     {{ item.judul }}
@@ -66,12 +66,12 @@
                                 (click)="handleRouteAgenda(item.id)">
                                 <div class="row mb-2 align-items-center">
                                     <div class="col-3 p-2 rounded-3 text-center" style="background-color: #f49405;">
-                                        <h3 class="mb-0 text-white">
+                                        <h5 class="mb-0 text-white">
                                             {{ onFormatDateAgenda(item.tanggal) | date: 'dd' }}
-                                        </h3>
-                                        <h4 class="mb-0 text-white">
+                                        </h5>
+                                        <h5 class="mb-0 text-white">
                                             {{ onFormatDateAgenda(item.tanggal) | date: 'MMM' }}
-                                        </h4>
+                                        </h5>
                                         <p class="mb-0 text-white">
                                             {{ onFormatDateAgenda(item.tanggal) | date: 'yyyy' }}
                                         </p>

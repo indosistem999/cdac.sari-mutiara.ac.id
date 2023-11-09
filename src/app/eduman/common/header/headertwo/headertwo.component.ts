@@ -58,6 +58,8 @@ export class HeadertwoComponent implements OnInit {
     //sticky header activation
     Identitas: any;
 
+    TopMenu: any[] = [];
+
     constructor(
         private _coreService: CoreService
     ) { }
@@ -66,6 +68,12 @@ export class HeadertwoComponent implements OnInit {
         this._coreService.getIdentitas().subscribe((result) => {
             if (result.status) {
                 this.Identitas = result.data;
+            }
+        });
+
+        this._coreService.getTopMenu().subscribe((result) => {
+            if (result.status) {
+                this.TopMenu = result.data;
             }
         })
     }

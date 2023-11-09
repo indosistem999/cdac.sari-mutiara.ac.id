@@ -140,7 +140,7 @@
         <div class="container-fluid">
             <div class="header-top-inner">
                 <div class="row align-items-center">
-                    <div class="col-xl-8 col-lg-8">
+                    <div class="col-xl-4 col-lg-4">
                         <div class="header-top-icon d-flex gap-2 align-items-center">
                             <div class="category-menu">
                                 <div class="Category-click">
@@ -153,7 +153,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="tel:(555)674890556">
+                            <!-- <a href="tel:(555)674890556">
                                 <i class="fas fa-phone"></i>
                                 <span *ngIf="Identitas?.telepon" class="text-white">
                                     {{ Identitas?.telepon }}
@@ -179,17 +179,19 @@
                                 <span *ngIf="!Identitas?.alamat" class="text-white">
                                     -
                                 </span>
-                            </a>
+                            </a> -->
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-4">
+                    <div class="col-xl-8 col-lg-8">
                         <div class="header-top-login d-flex f-right">
                             <div class="header-social">
-                                <a href="https://www.facebook.com/" target="_blank"><i
-                                        class="fab fa-facebook-f"></i></a>
-                                <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a *ngFor="let item of TopMenu" href="{{ item.id_konten }}" class="text-white me-2"
+                                    style="font-size: 12px;">
+                                    {{ item.nama_menu }}
+                                </a>
+                                <!-- <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
                                 <a href="https://vimeo.com/" target="_blank"><i class="fab fa-vimeo-v"></i></a>
-                                <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a> -->
                             </div>
                         </div>
                     </div>

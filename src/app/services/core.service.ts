@@ -85,6 +85,12 @@ export class CoreService {
         });
     }
 
+    getTopMenu(): Observable<any> {
+        return this._httpClient.get<any>(`${environment.endpoint}/menu_top`, {
+            headers: this.Header,
+        });
+    }
+
     getContent(id: string): Observable<any> {
         return this._httpClient.get<any>(`${environment.endpoint}/halaman`, {
             headers: this.Header,

@@ -19,13 +19,13 @@ export class AgendaPengumumanSectionComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
-        this._coreService.getAgenda(5, 1, "").subscribe((result) => {
+        this._coreService.getAgenda(3, 1, "").subscribe((result) => {
             if (result.status) {
                 this.Agenda = result.data;
             }
         })
 
-        this._coreService.getPengumuman(5, 1, "").subscribe((result) => {
+        this._coreService.getPengumuman(3, 1, "").subscribe((result) => {
             if (result.status) {
                 this.Pengumuman = result.data;
             }

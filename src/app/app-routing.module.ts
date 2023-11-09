@@ -48,6 +48,7 @@ import { AgendadetailsComponent } from './eduman/agendadetails/agendadetails.com
 import { PrestasiComponent } from './eduman/prestasi/prestasi.component';
 import { PrestasidetailsComponent } from './eduman/prestasidetails/prestasidetails.component';
 import { DownloadComponent } from './eduman/download/download.component';
+import { GalleryComponent } from './eduman/gallery/gallery.component';
 
 
 const routes: Routes = [
@@ -179,6 +180,10 @@ const routes: Routes = [
     {
         path: 'testimoni-details',
         component: TestimonidetailsComponent
+    },
+    {
+        path: 'gallery',
+        component: GalleryComponent
     },
     {
         path: 'gallery-details',

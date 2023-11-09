@@ -152,6 +152,7 @@ import { LayananComponent } from './hometwo/layanan/layanan.component';
 import { DownloadComponent } from './download/download.component';
 import { PrestasiComponent } from './prestasi/prestasi.component';
 import { PrestasidetailsComponent } from './prestasidetails/prestasidetails.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 
 
@@ -312,7 +313,8 @@ import { PrestasidetailsComponent } from './prestasidetails/prestasidetails.comp
     LayananComponent,
     DownloadComponent,
     PrestasiComponent,
-    PrestasidetailsComponent
+    PrestasidetailsComponent,
+    GalleryComponent
   ]
 })
 export class EdumanModule { }

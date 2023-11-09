@@ -12,12 +12,12 @@
                         <div *ngFor="let item of Agenda" class="col-xl-4 col-lg-4 col-md-12">
                             <div class="blog-wrapper position-relative mb-30">
                                 <div class="blog-thumb ">
-                                    <a (click)="handleRoute(item.id)">
+                                    <a (click)="handleRoute(item.judul)">
                                         <img [src]="item.photo ? item.photo.gambar : ''" alt="img"
                                             style="height: 14rem; width: 100%; object-fit: cover; object-position: center;">
                                     </a>
                                 </div>
-                                <a [routerLink]="['/blog']" class="blog-tag">
+                                <a class="blog-tag">
                                     <i class="fal fa-folder-open"></i>
                                     {{ item.kategori }}
                                 </a>
@@ -28,7 +28,7 @@
                                                 <div class="blog-date">
                                                     <i class="flaticon-calendar"></i>
                                                     <span>
-                                                        {{ item.tanggal }}
+                                                        {{ item.tanggal | date: 'dd MMMM yyyy' }}
                                                     </span>
                                                 </div>
                                             </div>

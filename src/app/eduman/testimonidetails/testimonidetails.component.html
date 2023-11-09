@@ -1,0 +1,59 @@
+<app-headertwo></app-headertwo>
+
+<div class="container">
+    <div class="" style="padding-left: 9rem; padding-right: 9rem;">
+        <app-breadcrumb breadcrumbTitle="Testimoni" breadcrumbSubTitle="{{ Detail?.nama }}">
+        </app-breadcrumb>
+    </div>
+</div>
+
+<div class="blog-area pt-0 pb-90">
+    <div class="container">
+        <div class="row mb-4 padding-blog">
+            <div class="col-xl-12 col-lg-12">
+                <div class="blog-main-wrapper mb-0">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12">
+                            <div class="blog-wrapper position-relative blog-details-wrapper mb-30">
+                                <div class="blog-thumb ">
+                                    <img [src]="Detail?.photo ? Detail?.photo : ''" alt="blog-img">
+                                </div>
+                                <div class="blog-tag">
+                                    <i class="fal fa-folder-open"></i>
+                                    <a [routerLink]="['/course']">Testimoni</a>
+                                </div>
+                                <div class="blog-content-wrapper">
+                                    <div class="blog-content" [innerHTML]="Detail?.isi">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row gap-3 align-items-center justify-content-center">
+                        <div class="col-auto p-2" style="cursor: pointer; background-color: #4e71a8; font-size: 30px">
+                            <a class="mb-0 text-white"
+                                href="https://www.facebook.com/sharer/sharer.php?u=https://universitassimalungun.ac.id/testimoni-details?id={{ Detail?.id }}">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </div>
+                        <div class="col-auto p-2" style="cursor: pointer; background-color: #1cb7eb; font-size: 30px">
+                            <a class="mb-0 text-white"
+                                href="http://www.twitter.com/share?url=https://universitassimalungun.ac.id/testimoni-details?id={{ Detail?.id }}">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                        <div class="col-auto p-2" style="cursor: pointer; background-color: #0dc143; font-size: 30px">
+                            <a class="mb-0 text-white"
+                                href="https://wa.me/?text=https://universitassimalungun.ac.id/testimoni-details?id={{ Detail?.id }}">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footerone></app-footerone>

@@ -3,7 +3,7 @@
 <app-breadcrumb breadcrumbTitle="{{ Detail?.judul }}" breadcrumbSubTitle="{{ Detail?.judul }}">
 </app-breadcrumb>
 
-<div class="blog-area pt-5 pb-90">
+<div class="blog-area pt-0 pb-90">
     <div class="container">
         <div class="row">
             <div class="col-xl-8 col-lg-12">
@@ -26,7 +26,27 @@
             </div>
             <div class="col-xl-4 col-lg-8 col-md-8">
                 <div class="sidebar-widget-wrapper">
-                    <app-blogrecentpost></app-blogrecentpost>
+                    <div class="sidebar__widget mb-30">
+                        <div class="sidebar__widget-head mb-35">
+                            <h4 class="sidebar__widget-title">Program MBKM</h4>
+                        </div>
+                        <div class="sidebar__widget-content">
+                            <div class="rc__post-wrapper">
+                                <div *ngFor="let item of Program" class="row d-flex align-items-center mb-4">
+                                    <div class="col-3">
+                                        <img [src]="item.photo" alt="program_photo" style="width: 100%;">
+                                    </div>
+                                    <div class="col-auto">
+                                        <p class="rc__title mb-1">
+                                            <a (click)="handleRoute(item)">
+                                                {{ item.judul }}
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,0 +1,42 @@
+<app-headertwo></app-headertwo>
+<app-breadcrumb breadcrumbTitle="Testimoni" breadcrumbSubTitle="Testimoni"></app-breadcrumb>
+
+<!-- blog-area-start -->
+
+<div class="blog-area pt-5 pb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12">
+                <div class="blog-main-wrapper mb-30">
+                    <div class="row">
+                        <div *ngFor="let item of Testimoni" class="col-xl-4 col-lg-4 col-md-12">
+                            <a (click)="handleRoute(item.nama)">
+                                <div class="categories-wrapper text-center mb-30" style="height: 33rem">
+                                    <div class="categiories-thumb mb-4">
+                                        <img [src]="item.photo" alt="" class="image_testimoni">
+                                    </div>
+                                    <div class="categories-content">
+                                        <p style="font-size: 17px; font-weight: 800;">
+                                            {{ item.nama }}
+                                        </p>
+                                        <p style="font-size: 13px;">
+                                            {{ item.keterangan_singkat }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                    <!-- <app-pagination [length]="Length" [pageSize]="PageSize" [pageNumber]="PageNumber"
+                        (handlePageChange)="handlePageChange($event)">
+                    </app-pagination> -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- blog-area-start -->
+
+<app-footerone></app-footerone>

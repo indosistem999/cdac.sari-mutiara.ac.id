@@ -9,7 +9,7 @@
             <div class="col-xl-12">
                 <div class="course-title-breadcrumb"
                     style="background-color: rgb(85 85 85 / 80%); padding: 5px 15px; border-radius: 5px;">
-                    <h2 class="text-white mb-0">
+                    <h2 class="text-white mb-0 text-center">
                         {{ PageName }}
                     </h2>
                 </div>
@@ -29,11 +29,13 @@
                             <div class="blog-wrapper position-relative blog-details-wrapper mb-30">
                                 <div class="blog-content-wrapper">
                                     <div class="row">
-                                        <div class="col-xl-3 col-lg-3 col-md-3 col-3">
+                                        <div *ngIf="Detail?.url_gambar?.length"
+                                            class="col-xl-3 col-lg-3 col-md-3 col-3">
                                             <img *ngIf="Detail?.url_gambar?.length" [src]="Detail?.url_gambar"
                                                 alt="blog-img">
                                         </div>
-                                        <div class="col-xl-9 col-lg-9 col-md-9 col-9">
+                                        <div
+                                            [class]=" Detail?.url_gambar?.length ? 'col-xl-9 col-lg-9 col-md-9 col-9' : 'col-xl-12 col-lg-12 col-md-12 col-12'">
                                             <div class="blog-content" [innerHTML]="Detail?.isi">
                                             </div>
                                         </div>

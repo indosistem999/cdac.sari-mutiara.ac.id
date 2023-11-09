@@ -1,14 +1,13 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CoreService } from 'src/app/services/core.service';
 
 @Component({
-    selector: 'app-countersection',
-    templateUrl: './countersection.component.html',
-    styleUrls: ['./countersection.component.scss'],
-    encapsulation: ViewEncapsulation.None
+    selector: 'app-programmain',
+    templateUrl: './programmain.component.html',
+    styleUrls: ['./programmain.component.scss']
 })
-export class CountersectionComponent implements OnInit {
+export class ProgrammainComponent implements OnInit {
 
     Program: any[] = [];
 

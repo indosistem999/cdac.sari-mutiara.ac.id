@@ -5,11 +5,6 @@
     <div class="sidebar__widget-content">
         <div class="rc__post-wrapper">
             <div *ngFor="let item of Recent" class="rc__post d-flex align-items-center">
-                <!-- <div class="rc__thumb mr-20">
-                    <a (click)="handleRoute(item.id)">
-                        <img [src]="item.photo ? item.photo.gambar : ''" alt="">
-                    </a>
-                </div> -->
                 <div class="rc__content">
                     <div class="rc__meta">
                         <span>
@@ -23,31 +18,6 @@
                     </p>
                 </div>
             </div>
-            <!-- <div class="rc__post d-flex align-items-center">
-             <div class="rc__thumb mr-20">
-                <a [routerLink]="['/blog-details']"><img src="assets/img/course/course-11.jpg" alt=""></a>
-             </div>
-             <div class="rc__content">
-                <div class="rc__meta">
-                   <span>March 26, 2021</span>
-                </div>
-                <h6 class="rc__title"><a [routerLink]="['/blog-details']">A Better Alternative To Grading
-                      Student.</a></h6>
-             </div>
-          </div>
-          <div class="rc__post d-flex align-items-center">
-             <div class="rc__thumb mr-20">
-                <a [routerLink]="['/blog-details']"><img src="assets/img/course/course-15.jpg" alt=""></a>
-             </div>
-             <div class="rc__content">
-                <div class="rc__meta">
-                   <span>October 15, 2021</span>
-                </div>
-                <h6 class="rc__title"><a [routerLink]="['/blog-details']">Strategic Social Media &amp;
-                      Evolution of Visual</a>
-                </h6>
-             </div>
-          </div> -->
         </div>
     </div>
 </div>

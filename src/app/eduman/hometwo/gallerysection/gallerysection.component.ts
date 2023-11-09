@@ -9,14 +9,14 @@ import SwiperCore, { Autoplay, Navigation } from "swiper";
 SwiperCore.use([Autoplay, Navigation]);
 
 @Component({
-    selector: 'app-categoriessectiontwo',
-    templateUrl: './categoriessectiontwo.component.html',
-    styleUrls: ['./categoriessectiontwo.component.scss'],
+    selector: 'app-gallerysection',
+    templateUrl: './gallerysection.component.html',
+    styleUrls: ['./gallerysection.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class CategoriessectiontwoComponent implements OnInit {
+export class GallerysectionComponent implements OnInit {
 
-    Testimoni: any[] = [];
+    Gallery: any[] = [];
 
     constructor(
         private _router: Router,
@@ -24,15 +24,17 @@ export class CategoriessectiontwoComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
-        this._coreService.getTestimoni().subscribe((result) => {
+        this._coreService.getGallery().subscribe((result) => {
             if (result.status) {
-                this.Testimoni = result.data;
+                this.Gallery = result.data;
             }
         })
     }
 
-    handleRoute(id: string): void {
-        let title = id.toLowerCase().replace(/\s/g, '-');
-        this._router.navigate(['/testimoni-details'], { queryParams: { judul: title } });
+    handleRoute(data: any): void {
+        let title = data.judul.toLowerCase().replace(/\s/g, '-');
+        localStorage.setItem('_USILPGD_', JSON.stringify(data));
+        this._router.navigate(['/gallery-details'], { queryParams: { judul: title } });
     }
+
 }

@@ -138,6 +138,11 @@ import { ProductpopupComponent } from './shop/productpopup/productpopup.componen
 import { ProgramdetailsComponent } from './programdetails/programdetails.component';
 import { BeritasectionComponent } from './hometwo/beritasection/beritasection.component';
 import { HalamandetailsComponent } from './halamandetails/halamandetails.component';
+import { ProgrammainComponent } from './programmain/programmain.component';
+import { TestimoniComponent } from './testimoni/testimoni.component';
+import { TestimonidetailsComponent } from './testimonidetails/testimonidetails.component';
+import { GallerysectionComponent } from './hometwo/gallerysection/gallerysection.component';
+import { GallerydetailsComponent } from './gallerydetails/gallerydetails.component';
 
 
 
@@ -284,7 +289,12 @@ import { HalamandetailsComponent } from './halamandetails/halamandetails.compone
     ProductpopupComponent,
     ProgramdetailsComponent,
     BeritasectionComponent,
-    HalamandetailsComponent
+    HalamandetailsComponent,
+    ProgrammainComponent,
+    TestimoniComponent,
+    TestimonidetailsComponent,
+    GallerysectionComponent,
+    GallerydetailsComponent
   ]
 })
 export class EdumanModule { }

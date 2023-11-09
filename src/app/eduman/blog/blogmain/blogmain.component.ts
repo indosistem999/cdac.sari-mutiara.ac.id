@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CoreService } from 'src/app/services/core.service';
 
 @Component({
@@ -18,20 +18,35 @@ export class BlogmainComponent implements OnInit {
 
     constructor(
         private _router: Router,
-        private _coreService: CoreService
+        private _coreService: CoreService,
+        private _activatedRoute: ActivatedRoute,
     ) { }
 
     ngOnInit(): void {
-        this._coreService.getBerita(this.PageSize, this.PageNumber, "").subscribe((result) => {
-            if (result.status) {
-                this.Berita = result.data;
-                this.Length = result.meta.total;
-            }
-        })
+        const params = this._activatedRoute.snapshot.queryParams['kategori'];
+
+        if (!params) {
+            this._coreService.getBerita(this.PageSize, this.PageNumber, "")
+                .subscribe((result) => {
+                    if (result.status) {
+                        this.Berita = result.data;
+                        this.Length = result.meta.total;
+                    }
+                })
+        } else {
+            this._coreService.getBeritaByKategori(this.PageSize, this.PageNumber, "", params)
+                .subscribe((result) => {
+                    if (result.status) {
+                        this.Berita = result.data;
+                        this.Length = result.meta.total;
+                    }
+                })
+        }
     }
 
     handleRoute(id: string): void {
-        this._router.navigate(['/blog-details'], { queryParams: { id: id } });
+        let title = id.toLowerCase().replace(/\s/g, '-');
+        this._router.navigate(['/blog-details'], { queryParams: { judul: title } });
     }
 
     handlePageChange(args: any): void {

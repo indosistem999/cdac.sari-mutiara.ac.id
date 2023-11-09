@@ -32,10 +32,24 @@ export class CoreService {
         const params: any = {
             page_size: pageSize ? pageSize : 4,
             page_number: pageNumber,
-            search: search
+            search: search,
         };
 
         return this._httpClient.get<any>(`${environment.endpoint}/berita`, {
+            headers: this.Header,
+            params: params
+        });
+    }
+
+    getBeritaByKategori(pageSize: number, pageNumber: number, search?: string, seo_kategori?: string): Observable<any> {
+        const params: any = {
+            page_size: pageSize ? pageSize : 4,
+            page_number: pageNumber,
+            search: search,
+            seo_kategori
+        };
+
+        return this._httpClient.get<any>(`${environment.endpoint}/berita/kategori`, {
             headers: this.Header,
             params: params
         });
@@ -83,6 +97,51 @@ export class CoreService {
     getTestimoni(): Observable<any> {
         return this._httpClient.get<any>(`${environment.endpoint}/testimonial`, {
             headers: this.Header,
+        });
+    }
+
+    getTestimoniDetail(id: string): Observable<any> {
+        return this._httpClient.get<any>(`${environment.endpoint}/testimonial/detail`, {
+            headers: this.Header,
+            params: {
+                id: id
+            }
+        });
+    }
+
+    getGallery(): Observable<any> {
+        return this._httpClient.get<any>(`${environment.endpoint}/galery_photo`, {
+            headers: this.Header,
+        });
+    }
+
+    getGalleryDetail(id: string): Observable<any> {
+        return this._httpClient.get<any>(`${environment.endpoint}/galery_photo/detail`, {
+            headers: this.Header,
+            params: {
+                id: id
+            }
+        });
+    }
+
+    getAllFaq(): Observable<any> {
+        return this._httpClient.get<any>(`${environment.endpoint}/faq`, {
+            headers: this.Header,
+        });
+    }
+
+    getKategoriFaq(): Observable<any> {
+        return this._httpClient.get<any>(`${environment.endpoint}/faq_kategori`, {
+            headers: this.Header
+        });
+    }
+
+    getFaqByKategori(id: string): Observable<any> {
+        return this._httpClient.get<any>(`${environment.endpoint}/faq_by_kategori`, {
+            headers: this.Header,
+            params: {
+                id: id
+            }
         });
     }
 }

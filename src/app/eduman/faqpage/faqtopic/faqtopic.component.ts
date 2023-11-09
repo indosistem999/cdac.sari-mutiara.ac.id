@@ -1,16 +1,23 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'app-faqtopic',
-  templateUrl: './faqtopic.component.html',
-  styleUrls: ['./faqtopic.component.scss'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'app-faqtopic',
+    templateUrl: './faqtopic.component.html',
+    styleUrls: ['./faqtopic.component.scss'],
+    encapsulation: ViewEncapsulation.None
 })
 export class FaqtopicComponent implements OnInit {
 
-  constructor() { }
+    @Input('kategori') kategori: any;
 
-  ngOnInit(): void {
-  }
+    @Output('onClick') onClick = new EventEmitter<any>();
 
+    constructor() { }
+
+    ngOnInit(): void {
+    }
+
+    handleClick(args: any): void {
+        this.onClick.emit(args.id);
+    }
 }

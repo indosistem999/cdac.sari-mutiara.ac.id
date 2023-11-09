@@ -1,5 +1,5 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CoreService } from 'src/app/services/core.service';
 
 @Component({
@@ -11,17 +11,27 @@ export class ProgramdetailsComponent implements OnInit, AfterViewInit {
 
     Detail: any;
 
+    Program: any[] = [];
+
     constructor(
+        private _router: Router,
         private _coreService: CoreService,
         private _activatedRoute: ActivatedRoute,
     ) { }
 
     ngOnInit(): void {
+        this._coreService.getProgram().subscribe((result) => {
+            if (result.status) {
+                this.Program = result.data;
+            }
+        })
     }
 
     ngAfterViewInit(): void {
-        const id = this._activatedRoute.snapshot.queryParams['id'];
-        this.getDetail(id);
+        const detail = JSON.parse(localStorage.getItem('_USILPPG_') as any);
+        if (detail) {
+            this.getDetail(detail.id);
+        };
     }
 
     private getDetail(id: string) {
@@ -32,4 +42,11 @@ export class ProgramdetailsComponent implements OnInit, AfterViewInit {
         })
     }
 
+    handleRoute(data: any): void {
+        if (data.isi_lengkap) {
+            localStorage.setItem('_USILPPG_', JSON.stringify(data));
+            let title = data.judul.toLowerCase().replace(/\s/g, '-');
+            window.location.href = `program-details?judul=${title}`
+        }
+    }
 }

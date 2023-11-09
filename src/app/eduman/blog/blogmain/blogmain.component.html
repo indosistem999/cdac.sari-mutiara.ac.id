@@ -21,22 +21,36 @@
                                     <i class="fal fa-folder-open"></i>
                                     {{ item.kategori }}
                                 </a>
-                                <div class="blog-content-wrapper">
-                                    <div class="blog-meta">
-                                        <div class="blog-date">
-                                            <i class="flaticon-calendar"></i>
-                                            <span>
-                                                {{ item.tanggal }}
-                                            </span>
+                                <div class="blog-content-wrapper" style="height: 16rem;">
+                                    <div class="row align-content-between" style="height: 100%;">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="blog-meta">
+                                                <div class="blog-date">
+                                                    <i class="flaticon-calendar"></i>
+                                                    <span>
+                                                        {{ item.tanggal }}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="blog-content">
+                                                <a (click)="handleRoute(item.judul)">
+                                                    <h5 class="mb-0">
+                                                        {{
+                                                        item.judul.length > 40
+                                                        ? (item.judul | slice: 0: 40) + '...'
+                                                        : item.judul + '...'
+                                                        }}
+                                                    </h5>
+                                                </a>
+
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="blog-content">
-                                        <a (click)="handleRoute(item.id)">
-                                            <h5>
-                                                {{ item.judul }}
-                                            </h5>
-                                        </a>
-                                        <a class="blog-btn" (click)="handleRoute(item.id)">Baca Selengkapnya</a>
+
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <a class="blog-btn" (click)="handleRoute(item.judul)">
+                                                Baca Selengkapnya
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

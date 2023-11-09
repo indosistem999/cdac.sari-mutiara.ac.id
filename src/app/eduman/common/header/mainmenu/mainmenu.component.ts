@@ -252,9 +252,23 @@ export class MainmenuComponent implements OnInit {
     ngOnInit(): void {
         this._coreService.getMenu().subscribe((result) => {
             if (result.status) {
-                this.Menu = result.data.sort((a: any, b: any) => { return parseInt(a.urutan) - parseInt(b.urutan) });
+                this.Menu = this.sortArrayAndChildren(result.data);
             }
         })
+    }
+
+    sortArrayAndChildren(arr: any) {
+        // Sort the main array
+        arr.sort((a: any, b: any) => a.urutan - b.urutan);
+
+        // Sort children arrays recursively
+        for (const item of arr) {
+            if (item.children && item.children.length > 0) {
+                item.children = this.sortArrayAndChildren(item.children);
+            }
+        }
+
+        return arr;
     }
 
     onClickMenu(args: any, utama?: any): any {
@@ -266,7 +280,14 @@ export class MainmenuComponent implements OnInit {
         if (args.jenis_menu == 'Halaman') {
             localStorage.setItem('_USILPPG_', JSON.stringify(payload));
             window.location.href = `halaman?page=${args.slug}`;
-        } else {
+        }
+        else if (args.jenis_menu == 'Program') {
+            window.location.href = `program`;
+        }
+        else if (args.jenis_menu == 'KategoriBerita') {
+            window.location.href = `blog?kategori=${args.id_konten}`;
+        }
+        else {
             window.location.href = `${args.id_konten}`;
         }
 

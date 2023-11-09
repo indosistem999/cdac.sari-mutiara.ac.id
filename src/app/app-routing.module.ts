@@ -37,6 +37,10 @@ import { ForgotpasswordmainComponent } from './eduman/forgotpassword/forgotpassw
 import { StudentprofilemainComponent } from './eduman/student/studentprofilemain/studentprofilemain.component';
 import { ProgramdetailsComponent } from './eduman/programdetails/programdetails.component';
 import { HalamandetailsComponent } from './eduman/halamandetails/halamandetails.component';
+import { ProgrammainComponent } from './eduman/programmain/programmain.component';
+import { TestimoniComponent } from './eduman/testimoni/testimoni.component';
+import { TestimonidetailsComponent } from './eduman/testimonidetails/testimonidetails.component';
+import { GallerydetailsComponent } from './eduman/gallerydetails/gallerydetails.component';
 
 
 const routes: Routes = [
@@ -122,6 +126,10 @@ const routes: Routes = [
         component: HalamandetailsComponent
     },
     {
+        path: 'berita',
+        component: BlogmainComponent
+    },
+    {
         path: 'blog',
         component: BlogmainComponent
     },
@@ -130,8 +138,24 @@ const routes: Routes = [
         component: BlogdetailsmainComponent
     },
     {
+        path: 'program',
+        component: ProgrammainComponent
+    },
+    {
         path: 'program-details',
         component: ProgramdetailsComponent
+    },
+    {
+        path: 'testimoni',
+        component: TestimoniComponent
+    },
+    {
+        path: 'testimoni-details',
+        component: TestimonidetailsComponent
+    },
+    {
+        path: 'gallery-details',
+        component: GallerydetailsComponent
     },
     {
         path: 'zoom-class',

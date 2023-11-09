@@ -11,13 +11,23 @@ export class TestimoniComponent implements OnInit {
 
     Testimoni: any[] = [];
 
+    Length = 0;
+    PageSize = 6;
+    PageNumber = 1;
+
     constructor(
         private _router: Router,
         private _coreService: CoreService,
     ) { }
 
     ngOnInit(): void {
-        this._coreService.getTestimoni().subscribe((result) => {
+        this._coreService.getTestimoni(1000, 1).subscribe((result) => {
+            if (result.status) {
+                this.Length = result.data.length;
+            }
+        })
+
+        this._coreService.getTestimoni(6, 1).subscribe((result) => {
             if (result.status) {
                 this.Testimoni = result.data;
             }
@@ -29,12 +39,14 @@ export class TestimoniComponent implements OnInit {
         this._router.navigate(['/testimoni-details'], { queryParams: { judul: title } });
     }
 
-    // handlePageChange(args: any): void {
-    //     this._coreService.getBerita(this.PageSize, args, "").subscribe((result) => {
-    //         if (result.status) {
-    //             this.Berita = result.data;
-    //         }
-    //     })
-    // }
+    handlePageChange(args: any): void {
+        console.log(args);
+
+        this._coreService.getTestimoni(6, args).subscribe((result) => {
+            if (result.status) {
+                this.Testimoni = result.data;
+            }
+        })
+    }
 
 }

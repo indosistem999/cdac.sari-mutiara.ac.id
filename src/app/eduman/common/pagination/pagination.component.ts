@@ -34,12 +34,6 @@ export class PaginationComponent implements OnInit, AfterViewInit {
 
     ngAfterViewInit(): void {
         setTimeout(() => {
-            console.log("LENGTH =>", this.length);
-            console.log("PAGE SIZE =>", this.pageSize);
-            console.log("PAGE NUMBER =>", this.pageNumber);
-
-            console.log("JUMLAH PAGINATION =>", Math.ceil(this.length / this.pageSize));
-
             for (let i = 0; i < Math.ceil(this.length / this.pageSize); i++) {
                 this.Pagination.push(i + 1);
             }
@@ -63,8 +57,6 @@ export class PaginationComponent implements OnInit, AfterViewInit {
     handlePageChange(index: number): void {
         this.CurrentPage = index;
 
-        this.onPageChange.emit({
-            pageNumber: index
-        });
+        this.onPageChange.emit(index);
     }
 }

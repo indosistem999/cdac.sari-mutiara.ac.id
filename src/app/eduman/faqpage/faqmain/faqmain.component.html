@@ -22,23 +22,19 @@
                         <div *ngFor="let item of Faq" class="col-xl-12 col-lg-12" (click)="handleClickFaq(item)">
                             <div class="faq-wrapper mb-3">
                                 <div class="faq-question-item">
-                                    <div class="row" style="width: 100%;">
-                                        <div class="col-12 d-flex just justify-content-between mb-3"
-                                            style="width: 100%;">
-                                            <div class="faq-queastion-text">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="row">
+                                            <div class="faq-queastion-text d-flex jusitfy-content-between">
                                                 <a>
                                                     {{ item.pertanyaan }}
                                                 </a>
                                             </div>
-                                            <div class="faqicon-arrow">
-                                                <a>
-                                                    <i class="far fa-chevron-right"></i>
-                                                </a>
-                                            </div>
                                         </div>
-                                        <div class="col-12 {{ Active == item.urutan ? 'd-flex' : 'd-none' }}">
-                                            <div [innerHTML]="item.jawaban"
-                                                style="font-size: 13px; line-height: normal;">
+
+                                        <div
+                                            class="row {{ Active == item.urutan ? 'd-flex border-top mt-2 pt-2' : 'd-none' }}">
+                                            <div class="col-12" [innerHTML]=" item.jawaban"
+                                                style="font-size: 12px; line-height: normal;" class="jawaban">
                                             </div>
                                         </div>
                                     </div>

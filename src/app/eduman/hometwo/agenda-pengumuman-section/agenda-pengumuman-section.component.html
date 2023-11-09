@@ -1,0 +1,102 @@
+<!--partnaer-area-start -->
+<div class="patner-area grey-2 py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 px-4">
+                <div class="row rounded-3 p-3 shadow" style="background-color: #028bd1;">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                                <img src="../../../../assets/img/agenda-pengumuman/block-icon-news.png" alt=""
+                                    style="height: 6rem;">
+                            </div>
+                        </div>
+
+                        <div class="row mb-5">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                                <h3 class="mb-0 text-white">
+                                    Pengumuman
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="row" style="height: 20rem; overflow-y: auto;">
+                            <div *ngFor="let item of Pengumuman"
+                                class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-2 border-bottom"
+                                (click)="handleRoutePengumuman(item.id)">
+                                <h5 class="mb-0 text-white">
+                                    {{ item.judul }}
+                                </h5>
+                                <p class="mb-0 text-white">
+                                    {{ item.tanggal }}
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row px-2 mt-3">
+                            <div class="col-lg-12 text-center">
+                                <a class="text-white" [routerLink]="['/pengumuman']">
+                                    Lihat Semua Pengumuman
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 px-4">
+                <div class="row rounded-3 p-3 shadow">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                                <img src="../../../../assets/img/agenda-pengumuman/block-icon-calendar.png" alt=""
+                                    style="height: 6rem;">
+                            </div>
+                        </div>
+
+                        <div class="row mb-5">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                                <h3 class="mb-0 ">
+                                    Agenda
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="row" style="height: 20rem; overflow-y: auto;">
+                            <div *ngFor="let item of Agenda"
+                                class="col-lg-12 col-md-12 col-sm-12 col-xs-12 border-bottom mb-2"
+                                (click)="handleRouteAgenda(item.id)">
+                                <div class="row mb-2 align-items-center">
+                                    <div class="col-3 p-2 rounded-3 text-center" style="background-color: #f49405;">
+                                        <h3 class="mb-0 text-white">
+                                            {{ onFormatDateAgenda(item.tanggal) | date: 'dd' }}
+                                        </h3>
+                                        <h4 class="mb-0 text-white">
+                                            {{ onFormatDateAgenda(item.tanggal) | date: 'MMM' }}
+                                        </h4>
+                                        <p class="mb-0 text-white">
+                                            {{ onFormatDateAgenda(item.tanggal) | date: 'yyyy' }}
+                                        </p>
+                                    </div>
+                                    <div class="col-9">
+                                        <h5 class="mb-0">
+                                            {{ item.judul }}
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row px-2 mt-3">
+                            <div class="col-lg-12 text-center">
+                                <a [routerLink]="['/agenda']">
+                                    Lihat Semua Agenda
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--partnaer-area-end -->

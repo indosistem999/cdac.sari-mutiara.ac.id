@@ -2,11 +2,18 @@
 // @import 'swiper/scss/bundle';
 @import "../../../../custom-palettes.scss";
 
-.categories-area.gallery {
+.layananbg {
+  background-image: url("../../../../assets/img/bg/partner.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.categories-area.layanan {
   background-color: #242424;
 }
 
-.categories-wrapper.gallery {
+.categories-wrapper.layanan {
   padding: 5px;
   background: $white;
   box-shadow: 0px 20px 30px rgba(24, 44, 74, 0.05);
@@ -98,13 +105,6 @@
     background: $theme-color;
     color: $white;
   }
-}
-
-.image_testimoni {
-  height: 15rem;
-  width: 100%;
-  object-fit: cover;
-  object-position: center;
 }
 
 .swiper-pagination-fraction,

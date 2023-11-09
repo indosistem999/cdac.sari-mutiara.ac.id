@@ -1,0 +1,86 @@
+<!--partnaer-area-start -->
+<div class="patner-area py-5 layananbg">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 ">
+                <div class="partner-box mb-30">
+                    <div class="section-title mb-30 text-center">
+                        <h2>Layanan
+                            <span class="down-mark-line-2">Kami</span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div>
+                    <div class="category-main-wrapper position-relative">
+                        <div>
+                            <div class="category-slide-wrapper position-relative">
+                                <div class="category-active">
+                                    <div class="swiper-wrapper">
+                                        <swiper class="mySwiper" [slidesPerView]="1" [spaceBetween]="30" [loop]="true"
+                                            [pagination]="true" [autoplay]="{
+                                                delay: 2500,
+                                                disableOnInteraction: false
+                                            }" [navigation]="{
+                                                nextEl: '.category-button-next',
+                                                prevEl: '.category-button-prev'
+                                            }" [breakpoints]="{
+                                                '320': {
+                                                    slidesPerView: 1,
+                                                    spaceBetween: 15
+                                                },
+                                                '480': {
+                                                    slidesPerView: 1,
+                                                    spaceBetween: 15
+                                                },
+                                                '640': {
+                                                    slidesPerView: 1,
+                                                    spaceBetween: 15
+                                                },
+                                                '991': {
+                                                    slidesPerView: Layanan.length > 3 ? 3 : 1,
+                                                    spaceBetween: 30
+                                                },
+                                                '1200': {
+                                                    slidesPerView: Layanan.length > 5 ? 3 : 1,
+                                                    spaceBetween: 30
+                                                },
+                                                '1400': {
+                                                    slidesPerView: Layanan.length > 5 ? 3 : 1,
+                                                    spaceBetween: 30
+                                                }
+                                            }">
+
+                                            <ng-template *ngFor="let item of Layanan" swiperSlide>
+                                                <a class="mb-2" href="{{ item.url }}">
+                                                    <div class="categories-wrapper layanan text-center mb-30">
+                                                        <div class="categiories-thumb mb-3">
+                                                            <img [src]="item.icon" alt="">
+                                                        </div>
+                                                        <div class="categories-content">
+                                                            <p class="mb-2" style="font-size: 15px;">
+                                                                {{ item.nama_layanan }}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </ng-template>
+                                        </swiper>
+                                    </div>
+                                </div>
+                                <!-- If we need navigation buttons -->
+                                <div class="category-nav">
+                                    <div class="category-button-prev"><i class="far fa-long-arrow-left"></i></div>
+                                    <div class="category-button-next"><i class="far fa-long-arrow-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--partnaer-area-end -->

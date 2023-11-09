@@ -1,16 +1,15 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { CoreService } from 'src/app/services/core.service';
 
 @Component({
-    selector: 'app-blogmain',
-    templateUrl: './blogmain.component.html',
-    styleUrls: ['./blogmain.component.scss'],
-    encapsulation: ViewEncapsulation.None
+    selector: 'app-agenda',
+    templateUrl: './agenda.component.html',
+    styleUrls: ['./agenda.component.scss']
 })
-export class BlogmainComponent implements OnInit {
+export class AgendaComponent implements OnInit {
 
-    Berita: any[] = [];
+    Agenda: any[] = [];
 
     Length = 0;
     PageSize = 6;
@@ -26,18 +25,18 @@ export class BlogmainComponent implements OnInit {
         const params = this._activatedRoute.snapshot.queryParams['kategori'];
 
         if (!params) {
-            this._coreService.getBerita(this.PageSize, this.PageNumber, "")
+            this._coreService.getAgenda(this.PageSize, this.PageNumber, "")
                 .subscribe((result) => {
                     if (result.status) {
-                        this.Berita = result.data;
+                        this.Agenda = result.data;
                         this.Length = result.meta.total;
                     }
                 })
         } else {
-            this._coreService.getBeritaByKategori(this.PageSize, this.PageNumber, "", params)
+            this._coreService.getAgendaByKategori(this.PageSize, this.PageNumber, "", params)
                 .subscribe((result) => {
                     if (result.status) {
-                        this.Berita = result.data;
+                        this.Agenda = result.data;
                         this.Length = result.meta.total;
                     }
                 })
@@ -46,14 +45,15 @@ export class BlogmainComponent implements OnInit {
 
     handleRoute(id: string): void {
         let title = id.toLowerCase().replace(/\s/g, '-');
-        this._router.navigate(['/blog-details'], { queryParams: { judul: title } });
+        this._router.navigate(['/agenda-details'], { queryParams: { judul: title } });
     }
 
     handlePageChange(args: any): void {
-        this._coreService.getBerita(this.PageSize, args, "").subscribe((result) => {
+        this._coreService.getAgenda(this.PageSize, args, "").subscribe((result) => {
             if (result.status) {
-                this.Berita = result.data;
+                this.Agenda = result.data;
             }
         })
     }
+
 }

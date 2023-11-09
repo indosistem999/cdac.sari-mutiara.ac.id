@@ -41,6 +41,10 @@ import { ProgrammainComponent } from './eduman/programmain/programmain.component
 import { TestimoniComponent } from './eduman/testimoni/testimoni.component';
 import { TestimonidetailsComponent } from './eduman/testimonidetails/testimonidetails.component';
 import { GallerydetailsComponent } from './eduman/gallerydetails/gallerydetails.component';
+import { PengumumanComponent } from './eduman/pengumuman/pengumuman.component';
+import { PengumumandetailsComponent } from './eduman/pengumumandetails/pengumumandetails.component';
+import { AgendaComponent } from './eduman/agenda/agenda.component';
+import { AgendadetailsComponent } from './eduman/agendadetails/agendadetails.component';
 
 
 const routes: Routes = [
@@ -144,6 +148,22 @@ const routes: Routes = [
     {
         path: 'program-details',
         component: ProgramdetailsComponent
+    },
+    {
+        path: 'pengumuman',
+        component: PengumumanComponent
+    },
+    {
+        path: 'pengumuman-details',
+        component: PengumumandetailsComponent
+    },
+    {
+        path: 'agenda',
+        component: AgendaComponent
+    },
+    {
+        path: 'agenda-details',
+        component: AgendadetailsComponent
     },
     {
         path: 'testimoni',

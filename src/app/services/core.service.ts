@@ -94,9 +94,15 @@ export class CoreService {
         });
     }
 
-    getTestimoni(): Observable<any> {
+    getTestimoni(pageSize?: number, pageNumber?: number): Observable<any> {
+        const params: any = {
+            page_size: pageSize ? pageSize : 3,
+            page_number: pageNumber ? pageNumber : 1,
+        };
+
         return this._httpClient.get<any>(`${environment.endpoint}/testimonial`, {
             headers: this.Header,
+            params: params
         });
     }
 
@@ -142,6 +148,84 @@ export class CoreService {
             params: {
                 id: id
             }
+        });
+    }
+
+    getAgenda(pageSize: number, pageNumber: number, search?: string): Observable<any> {
+        const params: any = {
+            page_size: pageSize ? pageSize : 4,
+            page_number: pageNumber,
+            search: search,
+        };
+
+        return this._httpClient.get<any>(`${environment.endpoint}/agenda`, {
+            headers: this.Header,
+            params: params
+        });
+    }
+
+    getAgendaByKategori(pageSize: number, pageNumber: number, search?: string, seo_kategori?: string): Observable<any> {
+        const params: any = {
+            page_size: pageSize ? pageSize : 4,
+            page_number: pageNumber,
+            search: search,
+            seo_kategori
+        };
+
+        return this._httpClient.get<any>(`${environment.endpoint}/agenda/kategori`, {
+            headers: this.Header,
+            params: params
+        });
+    }
+
+    getDetailAgenda(id: string): Observable<any> {
+        return this._httpClient.get<any>(`${environment.endpoint}/agenda/detail`, {
+            headers: this.Header,
+            params: {
+                id: id
+            }
+        });
+    }
+
+    getPengumuman(pageSize: number, pageNumber: number, search?: string): Observable<any> {
+        const params: any = {
+            page_size: pageSize ? pageSize : 4,
+            page_number: pageNumber,
+            search: search,
+        };
+
+        return this._httpClient.get<any>(`${environment.endpoint}/pengumuman`, {
+            headers: this.Header,
+            params: params
+        });
+    }
+
+    getPengumumanByKategori(pageSize: number, pageNumber: number, search?: string, seo_kategori?: string): Observable<any> {
+        const params: any = {
+            page_size: pageSize ? pageSize : 4,
+            page_number: pageNumber,
+            search: search,
+            seo_kategori
+        };
+
+        return this._httpClient.get<any>(`${environment.endpoint}/pengumuman/kategori`, {
+            headers: this.Header,
+            params: params
+        });
+    }
+
+    getDetailPengumuman(id: string): Observable<any> {
+        return this._httpClient.get<any>(`${environment.endpoint}/pengumuman/detail`, {
+            headers: this.Header,
+            params: {
+                id: id
+            }
+        });
+    }
+
+    getLayanan(): Observable<any> {
+        return this._httpClient.get<any>(`${environment.endpoint}/layanan`, {
+            headers: this.Header
         });
     }
 }

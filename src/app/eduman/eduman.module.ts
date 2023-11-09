@@ -143,6 +143,12 @@ import { TestimoniComponent } from './testimoni/testimoni.component';
 import { TestimonidetailsComponent } from './testimonidetails/testimonidetails.component';
 import { GallerysectionComponent } from './hometwo/gallerysection/gallerysection.component';
 import { GallerydetailsComponent } from './gallerydetails/gallerydetails.component';
+import { AgendaPengumumanSectionComponent } from './hometwo/agenda-pengumuman-section/agenda-pengumuman-section.component';
+import { AgendadetailsComponent } from './agendadetails/agendadetails.component';
+import { PengumumandetailsComponent } from './pengumumandetails/pengumumandetails.component';
+import { AgendaComponent } from './agenda/agenda.component';
+import { PengumumanComponent } from './pengumuman/pengumuman.component';
+import { LayananComponent } from './hometwo/layanan/layanan.component';
 
 
 
@@ -294,7 +300,13 @@ import { GallerydetailsComponent } from './gallerydetails/gallerydetails.compone
     TestimoniComponent,
     TestimonidetailsComponent,
     GallerysectionComponent,
-    GallerydetailsComponent
+    GallerydetailsComponent,
+    AgendaPengumumanSectionComponent,
+    AgendadetailsComponent,
+    PengumumandetailsComponent,
+    AgendaComponent,
+    PengumumanComponent,
+    LayananComponent
   ]
 })
 export class EdumanModule { }

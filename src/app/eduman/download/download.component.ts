@@ -73,5 +73,7 @@ export class DownloadComponent implements OnInit {
         })
     }
 
-
+    handleOpenFile(url: string): void {
+        window.open(url);
+    }
 }

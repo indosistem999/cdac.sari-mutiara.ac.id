@@ -16,6 +16,7 @@ import {
 import { Router } from '@angular/router';
 import { fadeInOut, INavbarData } from './helper';
 import { Menu, navbarData } from './nav-data';
+import { CoreService } from 'src/app/services/core.service';
 
 interface SideNavToggle {
     screenWidth: number;
@@ -47,7 +48,10 @@ export class MobilemenuComponent implements OnInit {
     @Output() onToggleSideNav: EventEmitter<SideNavToggle> = new EventEmitter();
     collapsed = false;
     screenWidth = 0;
-    navData = Menu;
+
+    navData: any[] = [];
+    Menu: any[] = [];
+
     multiple: boolean = false;
 
     @HostListener('window:resize', ['$event'])
@@ -62,13 +66,47 @@ export class MobilemenuComponent implements OnInit {
         }
     }
 
-    constructor(public router: Router) { }
+    constructor(
+        public router: Router,
+        private _coreService: CoreService,
+    ) { }
 
     ngOnInit(): void {
         this.screenWidth = window.innerWidth;
+
+        this._coreService.getMenu().subscribe((result) => {
+            if (result.status) {
+                this.navData = this.sortArrayAndChildren(result.data);
+
+                this.navData = this.navData.map((item) => {
+                    return {
+                        ...item,
+                        expanded: false,
+                    }
+                });
+
+                console.log(this.navData);
+            }
+        })
+    }
+
+    sortArrayAndChildren(arr: any) {
+        // Sort the main array
+        arr.sort((a: any, b: any) => a.urutan - b.urutan);
+
+        // Sort children arrays recursively
+        for (const item of arr) {
+            if (item.children && item.children.length > 0) {
+                item.children = this.sortArrayAndChildren(item.children);
+            }
+        }
+
+        return arr;
     }
 
     handleClick(item: INavbarData): void {
+        console.log(item);
+
         this.shrinkItems(item);
         item.expanded = !item.expanded;
     }
@@ -87,4 +125,25 @@ export class MobilemenuComponent implements OnInit {
         }
     }
 
+    onClickMenu(args: any, utama?: any): any {
+        const payload = {
+            utama: utama ? utama : [],
+            item: args
+        };
+
+        if (args.jenis_menu == 'Halaman') {
+            localStorage.setItem('_USILPPG_', JSON.stringify(payload));
+            window.location.href = `halaman?page=${args.slug}`;
+        }
+        else if (args.jenis_menu == 'Program') {
+            window.location.href = `program`;
+        }
+        else if (args.jenis_menu == 'KategoriBerita') {
+            window.location.href = `blog?kategori=${args.id_konten}`;
+        }
+        else {
+            window.location.href = `${args.id_konten}`;
+        }
+
+    }
 }

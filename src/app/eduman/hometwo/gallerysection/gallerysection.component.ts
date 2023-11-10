@@ -24,7 +24,7 @@ export class GallerysectionComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
-        this._coreService.getGallery().subscribe((result) => {
+        this._coreService.getGallery(6, 1).subscribe((result) => {
             if (result.status) {
                 this.Gallery = result.data;
             }

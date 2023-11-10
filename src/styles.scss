@@ -1,59 +1,66 @@
 /* Include the core Angular Material styles */
-@import './custom-palettes';
+@import "./custom-palettes";
 @import "~bootstrap/dist/css/bootstrap.css";
-@import 'swiper/scss';
-@import 'swiper/scss/navigation';
-@import 'swiper/scss/pagination';
-@import '../src/assets/css/fontawesome-all.min.css';
-@import '../src/assets/css/flaticon.css';
-@import '../src/assets/scss/common.scss';
-@import '../src/assets/scss/animation.scss';
-@import '../src/assets/scss/header.scss';
-@import '../src/assets/scss/webinars.scss';
-@import '../src/assets/scss/studentProfile.scss';
-@import '../src/assets/scss/signup.scss';
-@import '../src/assets/scss/blog.scss';
-@import '../src/assets/scss/courses.scss';
-@import '../src/assets/scss/breadcrumb.scss';
-
+@import "swiper/scss";
+@import "swiper/scss/navigation";
+@import "swiper/scss/pagination";
+@import "../src/assets/css/fontawesome-all.min.css";
+@import "../src/assets/css/flaticon.css";
+@import "../src/assets/scss/common.scss";
+@import "../src/assets/scss/animation.scss";
+@import "../src/assets/scss/header.scss";
+@import "../src/assets/scss/webinars.scss";
+@import "../src/assets/scss/studentProfile.scss";
+@import "../src/assets/scss/signup.scss";
+@import "../src/assets/scss/blog.scss";
+@import "../src/assets/scss/courses.scss";
+@import "../src/assets/scss/breadcrumb.scss";
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body, html {
-	font-family: 'Nunito Sans', sans-serif;
-	font-size: 16px;
-	font-weight: normal;
-	color: $body-text;
-	line-height: 26px;
+body,
+html {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  color: $body-text;
+  line-height: 26px;
+  overflow-x: hidden;
 }
-.container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
-	--bs-gutter-x: 30px;
-	padding-right: calc(var(--bs-gutter-x)*.5);
-	padding-left: calc(var(--bs-gutter-x)*.5);
+.container,
+.container-fluid,
+.container-xxl,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm {
+  --bs-gutter-x: 30px;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
 }
 .row {
-	--bs-gutter-x: 30px;
+  --bs-gutter-x: 30px;
 }
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 label {
-	cursor: pointer;
+  cursor: pointer;
 }
 .mat-calendar-body-cell {
-	padding-bottom: 15px !important;
+  padding-bottom: 15px !important;
 }
 .mat-input-element::placeholder {
-	color: $body-text;
+  color: $body-text;
 }
 input.mat-input-element {
-	margin-top: 2px;
+  margin-top: 2px;
 }
 @-moz-document url-prefix() {
-	html {
-	  scroll-behavior: auto !important;
-	}
+  html {
+    scroll-behavior: auto !important;
   }
+}

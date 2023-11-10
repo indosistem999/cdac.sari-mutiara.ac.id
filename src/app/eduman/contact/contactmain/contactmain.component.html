@@ -1,34 +1,39 @@
 <app-headertwo></app-headertwo>
 
 <!-- contact-area-start -->
-<div class="contact-area py-5">
+<div class="contact-area pb-5" style="background-color: #f6f8fb;">
+    <div class="category-shap-02">
+        <img src="assets/img/shape/categorey-shap-02.png" alt="image not found">
+    </div>
+    <div class="row pt-5 pb-2 rounded-2" style="background-color: #014372; z-index: 50; position: relative;">
+        <div class="col-xl-12 col-lg-12 col-md-12 mb-2">
+            <div class="contact-area-wrapper">
+                <div class="section-title text-center">
+                    <h2 class="mb-2 text-white">Waktu Pelayanan CS</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-5">
+            <div class="row justify-content-center align-items-center gap-3">
+                <div class="col-auto">
+                    <div class="support-info-phone text-center">
+                        <span class="mb-1 text-white">Senin / Jumat</span>
+                        <p class="text-white">{{ Identitas?.weekday_cs }}</p>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <div class="support-info-phone text-center">
+                        <span class="mb-1 text-white">Sabtu</span>
+                        <p class="text-white">{{ Identitas?.weekend_cs }}</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
     <div class="container">
         <div class="row">
-            <div class="col-xl-12 col-lg-12 col-md-12 mb-2">
-                <div class="contact-area-wrapper">
-                    <div class="section-title text-center">
-                        <h2>Waktu Pelayanan CS</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb-5">
-                <div class="row justify-content-center align-items-center gap-3">
-                    <div class="col-auto">
-                        <div class="support-info-phone text-center">
-                            <span class="mb-1">Senin / Jumat</span>
-                            <p>{{ Identitas?.weekday_cs }}</p>
-                        </div>
-                    </div>
-                    <div class="col-auto">
-                        <div class="support-info-phone text-center">
-                            <span class="mb-1">Sabtu</span>
-                            <p>{{ Identitas?.weekend_cs }}</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-xl-12 col-lg-12 col-md-12">
+            <div class="col-xl-12 col-lg-12 col-md-12" style="z-index: 50; position: relative;">
                 <app-contactsidebar [Identitas]="Identitas"></app-contactsidebar>
             </div>
         </div>

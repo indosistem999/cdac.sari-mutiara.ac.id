@@ -11,10 +11,18 @@ export class HometwomainComponent implements OnInit {
 
     Loading$ = this._coreService.Loading$;
 
+    Identitas: any;
+
     constructor(
         private _coreService: CoreService
     ) { }
 
-    ngOnInit(): void { }
+    ngOnInit(): void {
+        this._coreService.getIdentitas().subscribe((result) => {
+            if (result.status) {
+                this.Identitas = result.data;
+            }
+        })
+    }
 
 }

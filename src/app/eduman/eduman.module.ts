@@ -153,6 +153,7 @@ import { DownloadComponent } from './download/download.component';
 import { PrestasiComponent } from './prestasi/prestasi.component';
 import { PrestasidetailsComponent } from './prestasidetails/prestasidetails.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { TentangKamiComponent } from './tentang-kami/tentang-kami.component';
 
 
 
@@ -314,7 +315,8 @@ import { GalleryComponent } from './gallery/gallery.component';
     DownloadComponent,
     PrestasiComponent,
     PrestasidetailsComponent,
-    GalleryComponent
+    GalleryComponent,
+    TentangKamiComponent
   ]
 })
 export class EdumanModule { }

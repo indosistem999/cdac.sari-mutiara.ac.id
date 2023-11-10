@@ -49,6 +49,7 @@ import { PrestasiComponent } from './eduman/prestasi/prestasi.component';
 import { PrestasidetailsComponent } from './eduman/prestasidetails/prestasidetails.component';
 import { DownloadComponent } from './eduman/download/download.component';
 import { GalleryComponent } from './eduman/gallery/gallery.component';
+import { TentangKamiComponent } from './eduman/tentang-kami/tentang-kami.component';
 
 
 const routes: Routes = [
@@ -249,6 +250,10 @@ const routes: Routes = [
     {
         path: 'prestasi-details',
         component: PrestasidetailsComponent
+    },
+    {
+        path: 'tentang-kami',
+        component: TentangKamiComponent
     },
     {
         path: 'signin',

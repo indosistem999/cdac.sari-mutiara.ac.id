@@ -26,7 +26,7 @@ export class GallerydetailsComponent implements OnInit, AfterViewInit {
         const title = id.replace(/-/g, " ");
 
         if (title) {
-            this._coreService.getGallery()
+            this._coreService.getGallery(100, 1)
                 .subscribe((result) => {
                     if (result.status) {
                         if (result.data.length) {

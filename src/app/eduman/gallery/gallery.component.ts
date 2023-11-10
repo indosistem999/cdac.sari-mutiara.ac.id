@@ -27,9 +27,10 @@ export class GalleryComponent implements OnInit {
         //     }
         // })
 
-        this._coreService.getGallery().subscribe((result) => {
+        this._coreService.getGallery(this.PageSize, 1).subscribe((result) => {
             if (result.status) {
                 this.Testimoni = result.data;
+                this.Length = result.meta.total;
             }
         })
     }
@@ -40,9 +41,10 @@ export class GalleryComponent implements OnInit {
     }
 
     handlePageChange(args: any): void {
-        this._coreService.getGallery().subscribe((result) => {
+        this._coreService.getGallery(this.PageSize, args).subscribe((result) => {
             if (result.status) {
                 this.Testimoni = result.data;
+                this.Length = result.meta.total;
             }
         })
     }

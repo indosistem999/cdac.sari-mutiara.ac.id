@@ -123,9 +123,15 @@ export class CoreService {
         });
     }
 
-    getGallery(): Observable<any> {
+    getGallery(pageSize: number, pageNumber: number,): Observable<any> {
+        const params: any = {
+            page_size: pageSize ? pageSize : 4,
+            page_number: pageNumber,
+        };
+
         return this._httpClient.get<any>(`${environment.endpoint}/galery_photo`, {
             headers: this.Header,
+            params: params
         });
     }
 

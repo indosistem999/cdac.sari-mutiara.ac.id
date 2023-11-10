@@ -1,10 +1,13 @@
 <nav id="mobile-menu">
     <ul>
         <li *ngFor="let item of Menu" class="{{ item.children ? 'menu-item-has-children' : '' }} ">
-            <a *ngIf="!item.children" (click)="onClickMenu(item)">
+            <a *ngIf="!item.children && item.nama_menu != 'Tentang Kami'" (click)="onClickMenu(item)">
                 {{ item.nama_menu }}
             </a>
-            <a *ngIf="item.children">
+            <a *ngIf="item.nama_menu == 'Tentang Kami'" [routerLink]="['/tentang-kami']">
+                {{ item.nama_menu }}
+            </a>
+            <a *ngIf="item.children && item.nama_menu != 'Tentang Kami'">
                 {{ item.nama_menu }}
             </a>
             <ul *ngIf="item.children" class="sub-menu">

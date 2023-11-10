@@ -58,27 +58,27 @@
                             <ul>
                                 <li>
                                     <a [routerLink]="['/contact']">
-                                        Alamat: {{ Identitas?.alamat }}
+                                        <i class="fas fa-map"></i>&nbsp;{{ Identitas?.alamat }}
                                     </a>
                                 </li>
                                 <li>
                                     <a [routerLink]="['/contact']">
-                                        Kabupaten/Kota: {{ Identitas?.kota }}
+                                        <i class="fas fa-map-marker-alt"></i>&nbsp;{{ Identitas?.kota }}
                                     </a>
                                 </li>
                                 <li>
                                     <a [routerLink]="['/contact']">
-                                        Telepon: {{ Identitas?.telepon }}
+                                        <i class="fas fa-phone"></i>&nbsp;{{ Identitas?.telepon }}
                                     </a>
                                 </li>
                                 <li>
                                     <a [routerLink]="['/contact']">
-                                        WA: {{ Identitas?.wa }}
+                                        <i class="fab fa-whatsapp"></i>&nbsp;{{ Identitas?.wa }}
                                     </a>
                                 </li>
                                 <li>
                                     <a [routerLink]="['/contact']">
-                                        Email: {{ Identitas?.email }}
+                                        <i class="fas fa-envelope"></i>&nbsp;{{ Identitas?.email }}
                                     </a>
                                 </li>
                             </ul>
@@ -94,8 +94,8 @@
                                 © Copyrighted {{ Identitas?.footer }}
                             </p>
                         </div>
-                        <div class="col-xl-4 col-lg-4 col-sm-4">
-                            <div class="copy-right-support border-line-2 ms-5">
+                        <div class="col-xl-4 col-lg-4 col-sm-4 border-start border-end">
+                            <div class="copy-right-support ms-5">
                                 <div class="copy-right-svg">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="43.945" height="50"
                                         viewBox="0 0 43.945 50">
@@ -151,14 +151,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-lg-4 col-md-4">
+                        <div class="col-xl-4 col-lg-4 col-md-4 d-flex justify-content-end gap-3">
                             <a type="button" class="btn btn-secondary"
                                 href="https://www.google.com/maps/search/?api=1&query={{ Identitas?.latitude }},{{ Identitas?.longitude }}"
                                 target="_blank">
                                 Arahkan Ke Map
                             </a>
 
-                            <a type="button" class="btn btn-primary mx-2" [routerLink]="['/contact']">
+                            <a type="button" class="btn btn-primary " [routerLink]="['/contact']">
                                 Hubungi Kami
                             </a>
                         </div>

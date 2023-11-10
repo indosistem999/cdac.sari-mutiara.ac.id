@@ -29,13 +29,28 @@
                             <div class="blog-wrapper position-relative blog-details-wrapper mb-30">
                                 <div class="blog-content-wrapper">
                                     <div class="row">
-                                        <div *ngIf="Detail?.url_gambar?.length"
-                                            class="col-xl-3 col-lg-3 col-md-3 col-3">
-                                            <img *ngIf="Detail?.url_gambar?.length" [src]="Detail?.url_gambar"
-                                                alt="blog-img">
+                                        <div class="col-xl-3 col-lg-3 col-md-3 col-3 p-3 rounded-2 shadow-sm"
+                                            style="background-color: #f8f9fb;">
+                                            <div class="row mb-4">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <h5 class="mb-0">
+                                                        Tentang Kami
+                                                    </h5>
+                                                </div>
+                                            </div>
+
+                                            <div *ngFor="let item of SideMenu; let i = index" class="row mb-3 ">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <p class="mb-0 {{ i == SideMenu.length - 1 ? '' : 'pb-3 border-bottom' }}"
+                                                        (click)="handleClickSideMenu(item)">
+                                                        <i class="fas fa-chevron-right"
+                                                            style="font-size: 12px"></i>&nbsp;
+                                                        {{ item.nama_menu }}
+                                                    </p>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div
-                                            [class]=" Detail?.url_gambar?.length ? 'col-xl-9 col-lg-9 col-md-9 col-9' : 'col-xl-12 col-lg-12 col-md-12 col-12'">
+                                        <div class="col-xl-9 col-lg-9 col-md-9 col-9 px-5">
                                             <div class="blog-content" [innerHTML]="Detail?.isi">
                                             </div>
                                         </div>

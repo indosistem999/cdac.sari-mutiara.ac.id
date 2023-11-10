@@ -96,7 +96,7 @@
             <div class="offset-widget offset-logo mb-40">
                 <div class="row align-items-center">
                     <div class="col-9 d-flex gap-2 align-items-center">
-                        <a [routerLink]="['/']">
+                        <a (click)="onBackToHome()">
                             <img [src]="Identitas?.logo" alt="logo" style="height: 1.75rem">
                         </a>
                         <!-- <span [innerHTML]="Identitas?.instansi" class="text-center lh-sm" style="font-size: 14px">
@@ -190,7 +190,7 @@
                 <div class="row align-items-center justify-content-between">
                     <div class="col-auto">
                         <div class="header-logo d-flex align-items-center gap-3">
-                            <a [routerLink]="['/']">
+                            <a (click)="onBackToHome()">
                                 <img [src]="Identitas?.logo" alt="logo" style="height: 3rem">
                             </a>
                         </div>

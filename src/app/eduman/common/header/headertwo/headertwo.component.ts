@@ -81,4 +81,8 @@ export class HeadertwoComponent implements OnInit {
             }
         })
     }
+
+    onBackToHome(): void {
+        window.location.href = "";
+    }
 }

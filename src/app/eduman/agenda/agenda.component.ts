@@ -52,7 +52,7 @@ export class AgendaComponent implements OnInit {
 
     handleRoute(id: string): void {
         let title = id.toLowerCase().replace(/\s/g, '-');
-        this._router.navigate(['/agenda-details'], { queryParams: { judul: title } });
+        window.location.href = `agenda-details?judul=${title}`
     }
 
     handlePageChange(args: any): void {

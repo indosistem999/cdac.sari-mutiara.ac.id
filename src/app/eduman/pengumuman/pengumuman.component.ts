@@ -52,7 +52,7 @@ export class PengumumanComponent implements OnInit {
 
     handleRoute(id: string): void {
         let title = id.toLowerCase().replace(/\s/g, '-');
-        this._router.navigate(['/pengumuman-details'], { queryParams: { judul: title } });
+        window.location.href = `pengumuman-details?judul=${title}`
     }
 
     handlePageChange(args: any): void {

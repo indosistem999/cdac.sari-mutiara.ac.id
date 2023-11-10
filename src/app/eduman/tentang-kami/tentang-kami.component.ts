@@ -14,6 +14,8 @@ export class TentangKamiComponent implements OnInit {
 
     SideMenu: any[] = [];
 
+    SelectedMenu: any;
+
     constructor(
         private _coreService: CoreService
     ) { }
@@ -29,6 +31,8 @@ export class TentangKamiComponent implements OnInit {
     }
 
     handleClickSideMenu(args: any): void {
+        this.SelectedMenu = args;
+
         this._coreService.getContent(args.id_konten).subscribe((result) => {
             this.Detail = result.status ? result.data : null;
         })

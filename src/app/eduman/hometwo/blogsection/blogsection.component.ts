@@ -42,6 +42,10 @@ export class BlogsectionComponent implements OnInit, AfterViewInit {
 
     handleRoute(id: string): void {
         let title = id.toLowerCase().replace(/\s/g, '-');
-        window.location.href = `blog-details?judul=${title}`
+        if (this.title == 'Pengumuman Lainnya') {
+            window.location.href = `pengumuman-details?judul=${title}`
+        } else {
+            window.location.href = `blog-details?judul=${title}`
+        }
     }
 }

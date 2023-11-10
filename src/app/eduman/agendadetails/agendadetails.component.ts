@@ -12,6 +12,7 @@ export class AgendadetailsComponent implements OnInit, AfterViewInit {
     Detail: any;
 
     Related: any;
+    Loading$ = this._coreService.Loading$;
 
     constructor(
         private _coreService: CoreService,
@@ -55,6 +56,9 @@ export class AgendadetailsComponent implements OnInit, AfterViewInit {
             if (result.status) {
                 this.Detail = result.data;
                 this.Related = result.related;
+                setTimeout(() => {
+                    this._coreService.Loading$.next(false);
+                }, 1000);
             }
         })
     }

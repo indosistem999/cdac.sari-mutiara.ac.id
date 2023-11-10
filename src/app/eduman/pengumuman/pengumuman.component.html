@@ -76,3 +76,12 @@
 <!-- blog-area-start -->
 
 <app-footerone></app-footerone>
+
+<main *ngIf="(Loading$ | async)" class="bg-white row align-items-center justify-content-center "
+    style="height: 100vh; width: 100vw; position: absolute; top: 0; z-index: 1000;">
+    <div class="col-lg-12 text-center">
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+</main>

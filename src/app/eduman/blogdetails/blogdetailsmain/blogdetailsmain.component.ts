@@ -13,6 +13,8 @@ export class BlogdetailsmainComponent implements OnInit, AfterViewInit {
 
     Related: any;
 
+    Loading$ = this._coreService.Loading$;
+
     constructor(
         private _coreService: CoreService,
         private _activatedRoute: ActivatedRoute,
@@ -32,7 +34,6 @@ export class BlogdetailsmainComponent implements OnInit, AfterViewInit {
                         if (result.data.length) {
                             this.getDetail(result.data[0].id);
                         };
-
                     }
                 })
         }
@@ -55,6 +56,9 @@ export class BlogdetailsmainComponent implements OnInit, AfterViewInit {
             if (result.status) {
                 this.Detail = result.data;
                 this.Related = result.related;
+                setTimeout(() => {
+                    this._coreService.Loading$.next(false);
+                }, 1000);
             }
         })
     }

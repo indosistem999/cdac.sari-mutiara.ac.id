@@ -16,6 +16,8 @@ export class BlogmainComponent implements OnInit {
     PageSize = 6;
     PageNumber = 1;
 
+    Loading$ = this._coreService.Loading$;
+
     constructor(
         private _router: Router,
         private _coreService: CoreService,
@@ -31,6 +33,9 @@ export class BlogmainComponent implements OnInit {
                     if (result.status) {
                         this.Berita = result.data;
                         this.Length = result.meta.total;
+                        setTimeout(() => {
+                            this._coreService.Loading$.next(false);
+                        }, 1000);
                     }
                 })
         } else {
@@ -39,6 +44,9 @@ export class BlogmainComponent implements OnInit {
                     if (result.status) {
                         this.Berita = result.data;
                         this.Length = result.meta.total;
+                        setTimeout(() => {
+                            this._coreService.Loading$.next(false);
+                        }, 1000);
                     }
                 })
         }

@@ -14,6 +14,7 @@ export class PengumumanComponent implements OnInit {
     Length = 0;
     PageSize = 6;
     PageNumber = 1;
+    Loading$ = this._coreService.Loading$;
 
     constructor(
         private _router: Router,
@@ -30,6 +31,9 @@ export class PengumumanComponent implements OnInit {
                     if (result.status) {
                         this.Pengumuman = result.data;
                         this.Length = result.meta.total;
+                        setTimeout(() => {
+                            this._coreService.Loading$.next(false);
+                        }, 1000);
                     }
                 })
         } else {
@@ -38,6 +42,9 @@ export class PengumumanComponent implements OnInit {
                     if (result.status) {
                         this.Pengumuman = result.data;
                         this.Length = result.meta.total;
+                        setTimeout(() => {
+                            this._coreService.Loading$.next(false);
+                        }, 1000);
                     }
                 })
         }

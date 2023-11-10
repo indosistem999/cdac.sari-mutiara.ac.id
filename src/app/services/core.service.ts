@@ -104,7 +104,7 @@ export class CoreService {
 
     getTestimoni(pageSize?: number, pageNumber?: number): Observable<any> {
         const params: any = {
-            page_size: pageSize ? pageSize : 3,
+            page_size: pageSize ? pageSize : 4,
             page_number: pageNumber ? pageNumber : 1,
         };
 

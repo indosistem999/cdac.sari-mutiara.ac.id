@@ -24,11 +24,14 @@ export class TestimonidetailsComponent implements OnInit, AfterViewInit {
         const title = id.replace(/-/g, " ");
 
         if (title) {
-            this._coreService.getTestimoni()
+            this._coreService.getTestimoni(100, 1)
                 .subscribe((result) => {
                     if (result.status) {
                         if (result.data.length) {
                             const data = result.data.find((item: any) => { return item.nama.toLowerCase() == title });
+
+                            console.log(data);
+
                             if (data) {
                                 this.getDetail(data.id);
                             }

@@ -25,7 +25,9 @@ export class BlogrecentpostComponent implements OnInit {
         })
     }
 
-    handleRoute(id: string): void {
-        this._router.navigate(['/blog-details'], { queryParams: { id: id } });
+    handleRoute(title: string): void {
+        let titles = title.toLowerCase().replace(/\s/g, '-');
+        window.location.href = `blog-details?judul=${titles}`;
+        // this._router.navigate(['/blog-details'], { queryParams: { id: id } });
     }
 }

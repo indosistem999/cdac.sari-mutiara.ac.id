@@ -34,7 +34,7 @@
 
                         <div class="row px-2 mt-3">
                             <div class="col-lg-12 text-center">
-                                <a class="text-white" [routerLink]="['/pengumuman']">
+                                <a class="text-white" (click)="handleLihatSemuaPengumuman()">
                                     Lihat Semua Pengumuman
                                 </a>
                             </div>
@@ -87,7 +87,7 @@
 
                         <div class="row px-2 mt-3">
                             <div class="col-lg-12 text-center">
-                                <a [routerLink]="['/agenda']">
+                                <a (click)="handleLihatSemuaAgenda()">
                                     Lihat Semua Agenda
                                 </a>
                             </div>

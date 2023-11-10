@@ -155,7 +155,6 @@ import { PrestasidetailsComponent } from './prestasidetails/prestasidetails.comp
 import { GalleryComponent } from './gallery/gallery.component';
 import { TentangKamiComponent } from './tentang-kami/tentang-kami.component';
 import { MobilemenuTwoComponent } from './common/header/mobilemenu-two/mobilemenu-two.component';
-import { PanelMenuModule } from 'primeng/panelmenu';
 
 @NgModule({
     imports: [
@@ -186,7 +185,6 @@ import { PanelMenuModule } from 'primeng/panelmenu';
         CountdownModule,
         HttpClientModule,
         SwiperModule,
-        PanelMenuModule
     ],
     declarations: [
         CategoriesComponent,

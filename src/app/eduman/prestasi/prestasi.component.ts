@@ -21,10 +21,15 @@ export class PrestasiComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
+        this._coreService.Loading$.next(true);
+
         this._coreService.getPrestasi(6, 1, "").subscribe((result) => {
             if (result.status) {
                 this.Testimoni = result.data;
                 this.Length = result.meta.total;
+                setTimeout(() => {
+                    this._coreService.Loading$.next(false);
+                }, 1000);
             }
         })
     }

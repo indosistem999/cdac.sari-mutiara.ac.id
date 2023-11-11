@@ -27,10 +27,15 @@ export class GalleryComponent implements OnInit {
         //     }
         // })
 
+        this._coreService.Loading$.next(true);
+
         this._coreService.getGallery(this.PageSize, 1).subscribe((result) => {
             if (result.status) {
                 this.Testimoni = result.data;
                 this.Length = result.meta.total;
+                setTimeout(() => {
+                    this._coreService.Loading$.next(false);
+                }, 1000);
             }
         })
     }

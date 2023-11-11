@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { CoreService } from 'src/app/services/core.service';
 
 @Component({
@@ -16,9 +16,15 @@ export class ContactmainComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
+        this._coreService.Loading$.next(true);
+
         this._coreService.getIdentitas().subscribe((result) => {
             if (result.status) {
                 this.Identitas = result.data;
+
+                setTimeout(() => {
+                    this._coreService.Loading$.next(false);
+                }, 1000);
             }
         })
     }

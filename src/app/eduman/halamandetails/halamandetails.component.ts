@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Sanitizer, SecurityContext, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CoreService } from 'src/app/services/core.service';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser'
 
 @Component({
     selector: 'app-halamandetails',
     templateUrl: './halamandetails.component.html',
-    styleUrls: ['./halamandetails.component.scss']
+    styleUrls: ['./halamandetails.component.scss'],
 })
 export class HalamandetailsComponent {
 
@@ -15,7 +16,10 @@ export class HalamandetailsComponent {
 
     PageDetail = localStorage.getItem('_USILPPG_') ? JSON.parse(localStorage.getItem('_USILPPG_') as any) : null;
 
+    Content: any;
+
     constructor(
+        private _sanitize: DomSanitizer,
         private _coreService: CoreService,
         private _activatedRoute: ActivatedRoute,
     ) { }
@@ -36,8 +40,14 @@ export class HalamandetailsComponent {
         this._coreService.getContent(id).subscribe((result) => {
             if (result.status) {
                 this.Detail = result.data;
-                console.log(this.Detail)
+                console.log(JSON.stringify(this.Detail.isi));
+                this.Content = this._sanitize.bypassSecurityTrustHtml(this.Detail.isi);
             }
         })
+    }
+
+    getSafeContent(content: any) {
+        const htmlContent = content;
+        return this._sanitize.sanitize(SecurityContext.HTML, htmlContent);
     }
 }

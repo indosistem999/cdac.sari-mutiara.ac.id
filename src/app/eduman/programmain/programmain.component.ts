@@ -17,9 +17,15 @@ export class ProgrammainComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
+        this._coreService.Loading$.next(true);
+
         this._coreService.getProgram().subscribe((result) => {
             if (result.status) {
                 this.Program = result.data;
+
+                setTimeout(() => {
+                    this._coreService.Loading$.next(false);
+                }, 1000);
             }
         })
     }

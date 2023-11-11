@@ -281,23 +281,15 @@ export class MainmenuComponent implements OnInit {
 
         if (args.jenis_menu == 'Halaman') {
             localStorage.setItem('_USILPPG_', JSON.stringify(payload));
-            // window.location.replace(`halaman?page=${args.slug}`);
             this._router.navigate(['/halaman'], { queryParams: { page: args.slug } });
-
-        }
-        else if (args.jenis_menu == 'Program') {
-            // window.location.replace(`program`);
-            this._router.navigate(['/program']);
-        }
-        else if (args.jenis_menu == 'KategoriBerita') {
-            // window.location.replace(`blog?kategori=${args.id_konten}`);
+        } else if (args.jenis_menu == 'Program') {
+            localStorage.setItem('_USILPPG_', JSON.stringify({ id: args.id_konten }));
+            this._router.navigate(['/program-details'], { queryParams: { judul: args.slug } });
+        } else if (args.jenis_menu == 'KategoriBerita') {
             this._router.navigate(['/blog'], { queryParams: { kategori: args.id_konten } });
 
-        }
-        else {
-            // window.location.replace();
+        } else {
             this._router.navigate([`/${args.id_konten}`]);
         }
-
     }
 }

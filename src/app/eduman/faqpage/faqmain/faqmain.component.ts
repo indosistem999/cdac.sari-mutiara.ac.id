@@ -22,6 +22,8 @@ export class FaqmainComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
+        this._coreService.Loading$.next(true);
+
         this.getKategori();
         this.getFaq();
     }
@@ -38,6 +40,9 @@ export class FaqmainComponent implements OnInit {
         this._coreService.getAllFaq().subscribe((result) => {
             if (result.status) {
                 this.Faq = result.data[0].faq;
+                setTimeout(() => {
+                    this._coreService.Loading$.next(false);
+                }, 1000);
             }
         })
     }

@@ -12,6 +12,8 @@ export class AppComponent {
 
     favIcon: HTMLLinkElement = document.querySelector('#appIcon') as HTMLLinkElement;
 
+    Loading$ = this._coreService.Loading$;
+
     constructor(
         private router: Router,
         private _coreService: CoreService,

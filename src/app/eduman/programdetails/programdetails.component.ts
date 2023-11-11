@@ -20,9 +20,14 @@ export class ProgramdetailsComponent implements OnInit, AfterViewInit {
     ) { }
 
     ngOnInit(): void {
+        this._coreService.Loading$.next(true);
+
         this._coreService.getProgram().subscribe((result) => {
             if (result.status) {
                 this.Program = result.data;
+                setTimeout(() => {
+                    this._coreService.Loading$.next(false);
+                }, 1000);
             }
         })
     }
@@ -46,9 +51,7 @@ export class ProgramdetailsComponent implements OnInit, AfterViewInit {
         if (data.isi_lengkap) {
             localStorage.setItem('_USILPPG_', JSON.stringify(data));
             let title = data.judul.toLowerCase().replace(/\s/g, '-');
-            // window.location.replace(`program-details?judul=${title}`)
             this._router.navigate(['/program-details'], { queryParams: { judul: title } });
-
         }
     }
 }

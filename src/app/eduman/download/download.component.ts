@@ -25,6 +25,8 @@ export class DownloadComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
+        this._coreService.Loading$.next(true);
+
         this._coreService.getDownload(1000, 1, "", "").subscribe((result) => {
             if (result.status) {
                 this.Length = result.data.length;
@@ -34,6 +36,9 @@ export class DownloadComponent implements OnInit {
         this._coreService.getDownload(6, 1, "", "").subscribe((result) => {
             if (result.status) {
                 this.Testimoni = result.data;
+                setTimeout(() => {
+                    this._coreService.Loading$.next(false);
+                }, 1000);
             }
         })
 

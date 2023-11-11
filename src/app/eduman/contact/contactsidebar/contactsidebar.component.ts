@@ -39,44 +39,44 @@ export class ContactsidebarComponent implements OnInit, AfterViewInit {
                     icon: 'fab fa-facebook',
                     title: 'Facebook',
                     value: this.Identitas?.fb,
-                    url: '',
+                    url: `https://www.facebook.com/${this.Identitas?.fb}`,
                 },
                 {
                     id: 'ig',
                     icon: 'fab fa-instagram',
                     title: 'Instagram',
                     value: this.Identitas?.ig,
-                    url: '',
+                    url: `https://www.instagram.com/${this.Identitas?.ig}`,
                 },
                 {
                     id: 'email',
                     icon: 'fas fa-envelope',
                     title: 'Email',
                     value: this.Identitas?.email,
-                    url: '',
+                    url: `mailto:${this.Identitas?.email}`,
                 },
                 {
                     id: 'youtube',
                     icon: 'fab fa-youtube',
                     title: 'Youtube',
                     value: this.Identitas?.yt,
-                    url: '',
+                    url: `https://www.youtube.com/${this.Identitas?.yt}`,
                 },
                 {
                     id: 'tiktok',
                     icon: 'fab fa-tiktok',
                     title: 'Tiktok',
                     value: this.Identitas?.tiktok,
-                    url: '',
+                    url: `https://www.tiktok.com/${this.Identitas?.tiktok}`,
                 },
                 {
                     id: 'twitter',
                     icon: 'fab fa-twitter',
                     title: 'Twitter',
                     value: this.Identitas?.tw,
-                    url: '',
+                    url: `https://www.twitter.com/${this.Identitas?.tw}`,
                 },
-            ]
+            ];
         }, 500);
     }
 }

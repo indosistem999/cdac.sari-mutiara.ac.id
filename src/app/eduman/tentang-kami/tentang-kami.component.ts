@@ -21,11 +21,16 @@ export class TentangKamiComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
+        this._coreService.Loading$.next(true);
+
         this._coreService.getMenu().subscribe((result) => {
             if (result.status) {
                 const data = result.data.find((item: any) => { return item.nama_menu == 'Tentang Kami' });
                 this.SideMenu = data ? data.children.sort((a: any, b: any) => { return parseInt(a.urutan) - parseInt(b.urutan) }) : [];
                 this.handleClickSideMenu(this.SideMenu[0]);
+                setTimeout(() => {
+                    this._coreService.Loading$.next(false);
+                }, 1000);
             }
         })
     }

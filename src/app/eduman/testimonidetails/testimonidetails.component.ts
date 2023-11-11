@@ -17,6 +17,7 @@ export class TestimonidetailsComponent implements OnInit, AfterViewInit {
     ) { }
 
     ngOnInit(): void {
+        this._coreService.Loading$.next(true);
     }
 
     ngAfterViewInit(): void {
@@ -56,6 +57,9 @@ export class TestimonidetailsComponent implements OnInit, AfterViewInit {
         this._coreService.getTestimoniDetail(id).subscribe((result) => {
             if (result.status) {
                 this.Detail = result.data;
+                setTimeout(() => {
+                    this._coreService.Loading$.next(false);
+                }, 1000);
             }
         })
     }

@@ -1,10 +1,20 @@
 <router-outlet></router-outlet>
 
 <div class="row p-2 rounded"
-    style="position: fixed; bottom: 75px; right: 35px; background-color: #003971; cursor: pointer;" (click)="gotoTop()">
+    style="position: fixed; bottom: 75px; right: 35px; background-color: #003971; cursor: pointer; z-index: 50"
+    (click)="gotoTop()">
     <div class="col-auto">
         <span class="text-white">
             <i class="fas fa-chevron-up" style="font-size: 13px"></i>&nbsp; Scroll Keatas
         </span>
     </div>
 </div>
+
+
+<main *ngIf="(Loading$ | async)" class="row align-items-center justify-content-center loading">
+    <div class="col-lg-12 text-center">
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+</main>

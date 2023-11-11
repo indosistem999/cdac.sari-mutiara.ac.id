@@ -40,7 +40,6 @@ export class HalamandetailsComponent {
         this._coreService.getContent(id).subscribe((result) => {
             if (result.status) {
                 this.Detail = result.data;
-                console.log(JSON.stringify(this.Detail.isi));
                 this.Content = this._sanitize.bypassSecurityTrustHtml(this.Detail.isi);
             }
         })

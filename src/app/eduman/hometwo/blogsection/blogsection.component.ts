@@ -43,9 +43,11 @@ export class BlogsectionComponent implements OnInit, AfterViewInit {
     handleRoute(id: string): void {
         let title = id.toLowerCase().replace(/\s/g, '-');
         if (this.title == 'Pengumuman Lainnya') {
-            window.location.href = `pengumuman-details?judul=${title}`
+            // window.location.replace(`pengumuman-details?judul=${title}`);
+            this._router.navigate(['/pengumuman-details'], { queryParams: { judul: title } });
         } else {
-            window.location.href = `blog-details?judul=${title}`
+            // window.location.replace(`blog-details?judul=${title}`)
+            this._router.navigate(['/blog-details'], { queryParams: { judul: title } });
         }
     }
 }

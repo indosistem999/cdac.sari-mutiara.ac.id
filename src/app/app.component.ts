@@ -15,7 +15,11 @@ export class AppComponent {
     constructor(
         private router: Router,
         private _coreService: CoreService,
-    ) { }
+    ) {
+        this.router.routeReuseStrategy.shouldReuseRoute = function () {
+            return false;
+        };
+    }
 
     ngOnInit() {
         this.router.events.subscribe((evt) => {

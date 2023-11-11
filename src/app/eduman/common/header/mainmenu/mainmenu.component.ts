@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
 import { CoreService } from 'src/app/services/core.service';
 
 @Component({
@@ -246,6 +247,7 @@ export class MainmenuComponent implements OnInit {
     Menu: any[] = [];
 
     constructor(
+        private _router: Router,
         private _coreService: CoreService,
     ) { }
 
@@ -279,16 +281,22 @@ export class MainmenuComponent implements OnInit {
 
         if (args.jenis_menu == 'Halaman') {
             localStorage.setItem('_USILPPG_', JSON.stringify(payload));
-            window.location.href = `halaman?page=${args.slug}`;
+            // window.location.replace(`halaman?page=${args.slug}`);
+            this._router.navigate(['/halaman'], { queryParams: { page: args.slug } });
+
         }
         else if (args.jenis_menu == 'Program') {
-            window.location.href = `program`;
+            // window.location.replace(`program`);
+            this._router.navigate(['/program']);
         }
         else if (args.jenis_menu == 'KategoriBerita') {
-            window.location.href = `blog?kategori=${args.id_konten}`;
+            // window.location.replace(`blog?kategori=${args.id_konten}`);
+            this._router.navigate(['/blog'], { queryParams: { kategori: args.id_konten } });
+
         }
         else {
-            window.location.href = `${args.id_konten}`;
+            // window.location.replace();
+            this._router.navigate([`/${args.id_konten}`]);
         }
 
     }

@@ -65,6 +65,8 @@ export class HeadertwoComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
+        // this._coreService.Loading$.next(true);
+
         this._coreService.getIdentitas().subscribe((result) => {
             if (result.status) {
                 this.Identitas = result.data;
@@ -83,6 +85,6 @@ export class HeadertwoComponent implements OnInit {
     }
 
     onBackToHome(): void {
-        window.location.href = "";
+        window.location.replace("");
     }
 }

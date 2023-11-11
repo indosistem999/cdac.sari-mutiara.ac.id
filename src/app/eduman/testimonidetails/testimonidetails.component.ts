@@ -30,8 +30,6 @@ export class TestimonidetailsComponent implements OnInit, AfterViewInit {
                         if (result.data.length) {
                             const data = result.data.find((item: any) => { return item.nama.toLowerCase() == title });
 
-                            console.log(data);
-
                             if (data) {
                                 this.getDetail(data.id);
                             }

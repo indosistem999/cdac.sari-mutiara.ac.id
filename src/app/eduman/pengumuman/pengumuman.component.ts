@@ -23,6 +23,8 @@ export class PengumumanComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
+        this._coreService.Loading$.next(true);
+
         const params = this._activatedRoute.snapshot.queryParams['kategori'];
 
         if (!params) {
@@ -52,7 +54,8 @@ export class PengumumanComponent implements OnInit {
 
     handleRoute(id: string): void {
         let title = id.toLowerCase().replace(/\s/g, '-');
-        window.location.href = `pengumuman-details?judul=${title}`
+        // window.location.replace(`pengumuman-details?judul=${title}`);
+        this._router.navigate(['/pengumuman-details'], { queryParams: { judul: title } });
     }
 
     handlePageChange(args: any): void {

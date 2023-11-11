@@ -36,9 +36,9 @@ export class TestimoniComponent implements OnInit {
 
     handleRoute(id: string): void {
         let title = id.toLowerCase().replace(/\s/g, '-');
-        window.location.href = `testimoni-details?judul=${title}`;
+        // window.location.href = `testimoni-details?judul=${title}`;
 
-        // this._router.navigate(['/testimoni-details'], { queryParams: { judul: title } });
+        this._router.navigate(['/testimoni-details'], { queryParams: { judul: title } });
     }
 
     handlePageChange(args: any): void {

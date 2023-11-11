@@ -25,6 +25,8 @@ export class BlogmainComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
+        this._coreService.Loading$.next(true);
+
         const params = this._activatedRoute.snapshot.queryParams['kategori'];
 
         if (!params) {
@@ -54,7 +56,9 @@ export class BlogmainComponent implements OnInit {
 
     handleRoute(id: string): void {
         let title = id.toLowerCase().replace(/\s/g, '-');
-        window.location.href = `blog-details?judul=${title}`;
+        // window.location.replace(`blog-details?judul=${title}`);
+        this._router.navigate(['/blog-details'], { queryParams: { judul: title } });
+
     }
 
     handlePageChange(args: any): void {

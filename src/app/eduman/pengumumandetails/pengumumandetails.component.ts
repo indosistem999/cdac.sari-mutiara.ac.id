@@ -21,6 +21,7 @@ export class PengumumandetailsComponent implements OnInit, AfterViewInit {
     ) { }
 
     ngOnInit(): void {
+        this._coreService.Loading$.next(true);
     }
 
     ngAfterViewInit(): void {

@@ -46,7 +46,9 @@ export class ProgramdetailsComponent implements OnInit, AfterViewInit {
         if (data.isi_lengkap) {
             localStorage.setItem('_USILPPG_', JSON.stringify(data));
             let title = data.judul.toLowerCase().replace(/\s/g, '-');
-            window.location.href = `program-details?judul=${title}`
+            // window.location.replace(`program-details?judul=${title}`)
+            this._router.navigate(['/program-details'], { queryParams: { judul: title } });
+
         }
     }
 }

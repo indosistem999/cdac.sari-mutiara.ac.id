@@ -14,6 +14,7 @@ export class AgendaComponent implements OnInit {
     Length = 0;
     PageSize = 6;
     PageNumber = 1;
+
     Loading$ = this._coreService.Loading$;
 
     constructor(
@@ -23,6 +24,8 @@ export class AgendaComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
+        this._coreService.Loading$.next(true);
+
         const params = this._activatedRoute.snapshot.queryParams['kategori'];
 
         if (!params) {
@@ -52,7 +55,8 @@ export class AgendaComponent implements OnInit {
 
     handleRoute(id: string): void {
         let title = id.toLowerCase().replace(/\s/g, '-');
-        window.location.href = `agenda-details?judul=${title}`
+        // window.location.replace(`agenda-details?judul=${title}`);
+        this._router.navigate(['/agenda-details'], { queryParams: { judul: title } });
     }
 
     handlePageChange(args: any): void {

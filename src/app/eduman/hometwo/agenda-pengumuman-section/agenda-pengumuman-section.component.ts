@@ -34,20 +34,27 @@ export class AgendaPengumumanSectionComponent implements OnInit {
 
     handleRouteAgenda(id: string): void {
         let title = id.toLowerCase().replace(/\s/g, '-');
-        window.location.href = `agenda-details?judul=${title}`
+        // window.location.replace(`agenda-details?judul=${title}`)
+        this._router.navigate(['/agenda-details'], { queryParams: { judul: title } });
+
     }
 
     handleRoutePengumuman(id: string): void {
         let title = id.toLowerCase().replace(/\s/g, '-');
-        window.location.href = `pengumuman-details?judul=${title}`
+        // window.location.replace(`pengumuman-details?judul=${title}`);
+        this._router.navigate(['/pengumuman-details'], { queryParams: { judul: title } });
+
     }
 
     handleLihatSemuaAgenda(): void {
-        window.location.href = 'agenda'
+        // window.location.replace('agenda');
+        this._router.navigate(['/agenda']);
+
     }
 
     handleLihatSemuaPengumuman(): void {
-        window.location.href = 'pengumuman'
+        // window.location.replace('pengumuman')
+        this._router.navigate(['/pengumuman']);
     }
 
     onFormatDateAgenda(tanggal: string): any {

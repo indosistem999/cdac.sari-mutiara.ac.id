@@ -31,6 +31,7 @@ export class BeritasectionComponent implements OnInit {
 
     handleRoute(id: string): void {
         let title = id.toLowerCase().replace(/\s/g, '-');
-        window.location.href = `blog-details?judul=${title}`
+        // window.location.replace(`blog-details?judul=${title}`);
+        this._router.navigate(['/blog-details'], { queryParams: { judul: title } });
     }
 }

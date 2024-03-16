@@ -1,6 +1,7 @@
-<app-headertwo *ngIf="!forSection"></app-headertwo>
+<app-headertwo *ngIf="!forSection && Faq.length"></app-headertwo>
 
-<div *ngIf="!forSection" class="features-area pt-45 pb-15" [style.background-image]="'url(assets/img/fact/fact.png)'"
+<div *ngIf="!forSection  && Faq.length" class="features-area pt-45 pb-15"
+    [style.background-image]="'url(assets/img/fact/fact.png)'"
     style="background-position: bottom; background-repeat: no-repeat; background-size: cover;">
     <div class="container">
         <div class="row">
@@ -19,7 +20,7 @@
 </div>
 
 <!-- faq-area-start -->
-<div class="faq-topic-area">
+<div *ngIf="Faq.length" class="faq-topic-area">
     <div class="container">
         <div class="row">
             <div class="col-xl-12">
@@ -64,4 +65,4 @@
     </div>
     <!-- faq-area-end -->
 
-    <app-footerone *ngIf="!forSection"></app-footerone>
+    <app-footerone *ngIf="!forSection  && Faq.length"></app-footerone>

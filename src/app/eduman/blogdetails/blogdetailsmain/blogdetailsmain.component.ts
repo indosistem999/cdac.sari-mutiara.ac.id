@@ -26,10 +26,10 @@ export class BlogdetailsmainComponent implements OnInit, AfterViewInit {
 
     ngAfterViewInit(): void {
         const id = this._activatedRoute.snapshot.queryParams['judul'];
-        const title = id.replace(/-/g, " ");
+        // const title = id.replace(/-/g, " ");
 
-        if (title) {
-            this._coreService.getBerita(100, 1, this.titleCaseHyphenToSpace(title))
+        if (id) {
+            this._coreService.getBerita(100, 1, this.titleCaseHyphenToSpace(id))
                 .subscribe((result) => {
                     if (result.status) {
                         if (result.data.length) {

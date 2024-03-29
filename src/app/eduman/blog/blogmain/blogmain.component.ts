@@ -55,9 +55,9 @@ export class BlogmainComponent implements OnInit {
     }
 
     handleRoute(id: string): void {
-        let title = id.toLowerCase().replace(/\s/g, '-');
+        // let title = id.toLowerCase().replace(/\s/g, '-');
         // window.location.replace(`blog-details?judul=${title}`);
-        this._router.navigate(['/blog-details'], { queryParams: { judul: title } });
+        this._router.navigate(['/blog-details'], { queryParams: { judul: id } });
 
     }
 

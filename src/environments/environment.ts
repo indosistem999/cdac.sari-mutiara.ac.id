@@ -5,7 +5,7 @@
 export const environment = {
     production: false,
     endpoint: 'https://apiproduction.sari-mutiara.ac.id/website',
-    token: 'b907cc05-f6a3-4401-8ca7-08e70505f796'
+    token: '127368e1-1bb5-4111-b0bb-57b52ae154a4'
 };
 
 /*
